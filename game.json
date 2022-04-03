@@ -6844,6 +6844,84 @@
         {
           "disabled": false,
           "folded": false,
+          "type": "BuiltinCommonInstructions::Comment",
+          "color": {
+            "b": 109,
+            "g": 230,
+            "r": 255,
+            "textB": 0,
+            "textG": 0,
+            "textR": 0
+          },
+          "comment": "Create a Stix opponent",
+          "comment2": ""
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StixCharacter",
+                "SpawnPoint.CenterX()",
+                "SpawnPoint.CenterY()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StixCharacterHitBox",
+                "StixCharacter.CenterX()",
+                "StixCharacter.CenterY()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::Character::StixOpponent"
+              },
+              "parameters": [
+                "StixCharacter",
+                "Character",
+                "SpawnPoint",
+                "StixCharacterHitBox",
+                "PlatformerObject",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
           "type": "BuiltinCommonInstructions::Link",
           "include": {
             "includeConfig": 0
@@ -6858,6 +6936,14 @@
             "includeConfig": 0
           },
           "target": "Stix Events"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [],
+          "actions": [],
+          "events": []
         }
       ],
       "layers": [
@@ -8794,6 +8880,11 @@
               "value": ""
             }
           ]
+        },
+        {
+          "name": "Clipboard",
+          "type": "string",
+          "value": ""
         }
       ],
       "instances": [
@@ -10023,10 +10114,10 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "ModVarGlobalTxt"
+                    "value": "TextEntryObject::String"
                   },
                   "parameters": [
-                    "Username",
+                    "UsernameEntry",
                     "=",
                     "VariableString(Credentials.Username)"
                   ],
@@ -10035,24 +10126,12 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "ModVarGlobalTxt"
+                    "value": "TextObject::String"
                   },
                   "parameters": [
-                    "Password",
+                    "Username",
                     "=",
-                    "VariableString(Credentials.Password)"
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "TextEntryObject::String"
-                  },
-                  "parameters": [
-                    "UsernameEntry",
-                    "=",
-                    "GlobalVariableString(Username)"
+                    "StringExtensions::Trim(UsernameEntry.String())"
                   ],
                   "subInstructions": []
                 },
@@ -10064,11 +10143,31 @@
                   "parameters": [
                     "PasswordEntry",
                     "=",
-                    "GlobalVariableString(Password)"
+                    "VariableString(Credentials.Password)"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextObject::String"
+                  },
+                  "parameters": [
+                    "Password",
+                    "=",
+                    "StringExtensions::MaskPassword(PasswordEntry.String())"
                   ],
                   "subInstructions": []
                 }
               ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [],
               "events": []
             }
           ]
@@ -10849,14 +10948,35 @@
                 {
                   "type": {
                     "inverted": false,
-                    "value": "CollisionPoint"
+                    "value": "BuiltinCommonInstructions::Or"
                   },
-                  "parameters": [
-                    "PasswordSelect",
-                    "MouseX()",
-                    "MouseY()"
-                  ],
-                  "subInstructions": []
+                  "parameters": [],
+                  "subInstructions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "CollisionPoint"
+                      },
+                      "parameters": [
+                        "PasswordSelect",
+                        "MouseX()",
+                        "MouseY()"
+                      ],
+                      "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "CollisionPoint"
+                      },
+                      "parameters": [
+                        "ShowPassword",
+                        "MouseX()",
+                        "MouseY()"
+                      ],
+                      "subInstructions": []
+                    }
+                  ]
                 }
               ],
               "actions": [
@@ -11111,7 +11231,7 @@
                       "parameters": [
                         "Username",
                         "=",
-                        "Username.String()"
+                        "StringExtensions::Trim(UsernameEntry.String())"
                       ],
                       "subInstructions": []
                     },
@@ -11123,7 +11243,7 @@
                       "parameters": [
                         "Password",
                         "=",
-                        "Password.String()"
+                        "StringExtensions::Trim(PasswordEntry.String())"
                       ],
                       "subInstructions": []
                     }
@@ -11220,6 +11340,161 @@
               ]
             }
           ]
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyPressed"
+              },
+              "parameters": [
+                "",
+                "LControl"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "KeyReleased"
+              },
+              "parameters": [
+                "",
+                "v"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Clipboard::ReadTextCrossPlaform"
+              },
+              "parameters": [
+                "",
+                "\"Clipboard\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": true,
+                "value": "StringExtensions::IsEmpty"
+              },
+              "parameters": [
+                "",
+                "VariableString(Clipboard)",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [],
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarSceneTxt"
+                  },
+                  "parameters": [
+                    "Selected",
+                    "=",
+                    "\"Username\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextEntryObject::String"
+                  },
+                  "parameters": [
+                    "UsernameEntry",
+                    "=",
+                    "VariableString(Clipboard)"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarSceneTxt"
+                  },
+                  "parameters": [
+                    "Selected",
+                    "=",
+                    "\"Password\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "TextEntryObject::String"
+                  },
+                  "parameters": [
+                    "PasswordEntry",
+                    "=",
+                    "VariableString(Clipboard)"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ModVarSceneTxt"
+                  },
+                  "parameters": [
+                    "Clipboard",
+                    "=",
+                    "\"\""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
         }
       ],
       "layers": [
@@ -11273,6 +11548,14 @@
         {
           "name": "HandheldItem",
           "type": "HandheldItem::HandheldItem"
+        },
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "gravityX": 0,
+          "gravityY": 9.8,
+          "scaleX": 100,
+          "scaleY": 100
         },
         {
           "name": "PlatformerObject",
@@ -12415,6 +12698,14 @@
           "type": "HandheldItem::HandheldItem"
         },
         {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "gravityX": 0,
+          "gravityY": 9.8,
+          "scaleX": 100,
+          "scaleY": 100
+        },
+        {
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior"
         },
@@ -12573,6 +12864,14 @@
           "type": "HandheldItem::HandheldItem"
         },
         {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "gravityX": 0,
+          "gravityY": 9.8,
+          "scaleX": 100,
+          "scaleY": 100
+        },
+        {
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior"
         },
@@ -12609,7 +12908,7 @@
         "gridColor": 10401023,
         "gridAlpha": 0.8,
         "snap": false,
-        "zoomFactor": 0.8050000000000002,
+        "zoomFactor": 0.15000000000000002,
         "windowMask": false
       },
       "objectsGroups": [],
@@ -12677,9 +12976,9 @@
           "locked": false,
           "name": "Platform",
           "persistentUuid": "ee65ba09-437b-4019-88c7-9d7c7fe17f60",
-          "width": 5249,
-          "x": 1702.5,
-          "y": 2502.5,
+          "width": 4397,
+          "x": 2128.5,
+          "y": 2928.5,
           "zOrder": 2,
           "numberProperties": [],
           "stringProperties": [],
@@ -12790,8 +13089,8 @@
           "name": "TextShowPoint",
           "persistentUuid": "07c3503d-bd8c-46f1-992c-aa0ed389dd9d",
           "width": 0,
-          "x": 845,
-          "y": 298,
+          "x": 748,
+          "y": 290,
           "zOrder": 9,
           "numberProperties": [],
           "stringProperties": [],
@@ -12902,9 +13201,265 @@
           "name": "Platform",
           "persistentUuid": "ef719de2-d772-45fc-b5e9-84077727ae8e",
           "width": 434,
-          "x": 3880,
-          "y": 6766,
+          "x": 3902,
+          "y": 5117,
           "zOrder": 14,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 20,
+          "layer": "",
+          "locked": false,
+          "name": "Platform",
+          "persistentUuid": "b1c9cbf1-8d37-4f8b-ab50-765169b1fc72",
+          "width": 4224,
+          "x": 93,
+          "y": -40,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 195,
+          "layer": "",
+          "locked": false,
+          "name": "TextBubble3",
+          "persistentUuid": "4a54c743-0d5b-4e31-97d1-0ef8d721fda4",
+          "width": 189,
+          "x": 1527,
+          "y": 124,
+          "zOrder": 15,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "TutorialText3",
+          "persistentUuid": "bfc4d4f5-4523-47b9-8349-fc1aff3bb80d",
+          "width": 0,
+          "x": 1552,
+          "y": 130,
+          "zOrder": 16,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "TextShowPoint2",
+          "persistentUuid": "6a962a55-5067-4e92-9c52-0e20f4289474",
+          "width": 0,
+          "x": 1443,
+          "y": 296,
+          "zOrder": 17,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "Platform",
+          "persistentUuid": "973f5cd9-3efa-457d-ad0d-f77bd35c1863",
+          "width": 0,
+          "x": 4063,
+          "y": 552,
+          "zOrder": 18,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 270,
+          "customSize": true,
+          "height": 20,
+          "layer": "",
+          "locked": false,
+          "name": "Platform",
+          "persistentUuid": "fb478103-fb3a-4f07-a067-f2661943a5eb",
+          "width": 366,
+          "x": 4140,
+          "y": 133,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 20,
+          "layer": "",
+          "locked": false,
+          "name": "Platform",
+          "persistentUuid": "9f3e956e-a879-4512-99c4-8f74ecd21d5e",
+          "width": 1826,
+          "x": 4333,
+          "y": 740,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 20,
+          "layer": "",
+          "locked": false,
+          "name": "Platform",
+          "persistentUuid": "1b3d0d5f-4aef-45ae-9bf2-43a23d3c5ff9",
+          "width": 1839,
+          "x": 4327,
+          "y": 305,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 270,
+          "customSize": true,
+          "height": 20,
+          "layer": "",
+          "locked": false,
+          "name": "Platform",
+          "persistentUuid": "20466320-1230-4f97-99c6-2b0b5e472816",
+          "width": 439,
+          "x": 5937.5,
+          "y": 530.5,
+          "zOrder": 2,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "SpawnPoint",
+          "persistentUuid": "0617ab31-1924-4dfc-bfa6-2bf42942e998",
+          "width": 0,
+          "x": 5731,
+          "y": 465,
+          "zOrder": 19,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 150,
+          "layer": "",
+          "locked": false,
+          "name": "TextBubble4",
+          "persistentUuid": "99fa58aa-22f0-461b-b29e-8b5ec4b4d956",
+          "width": 235,
+          "x": 3109,
+          "y": 92,
+          "zOrder": 20,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "TutorialText4",
+          "persistentUuid": "fc356359-6710-401d-876e-17ecc9b577ad",
+          "width": 0,
+          "x": 3124,
+          "y": 118,
+          "zOrder": 21,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "TextShowPoint3",
+          "persistentUuid": "48080144-668e-4303-9318-754e6893b772",
+          "width": 0,
+          "x": 3022,
+          "y": 266,
+          "zOrder": 22,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "TextShowPoint4",
+          "persistentUuid": "f4ea81de-0efc-4937-8a61-842c0e2c89e0",
+          "width": 0,
+          "x": 4416,
+          "y": 613,
+          "zOrder": 23,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": true,
+          "height": 176,
+          "layer": "",
+          "locked": false,
+          "name": "TextBubble5",
+          "persistentUuid": "e07cbef2-1d65-483d-ad6d-7fd41fb2d82b",
+          "width": 254,
+          "x": 4519,
+          "y": 389,
+          "zOrder": 24,
+          "numberProperties": [],
+          "stringProperties": [],
+          "initialVariables": []
+        },
+        {
+          "angle": 0,
+          "customSize": false,
+          "height": 0,
+          "layer": "",
+          "locked": false,
+          "name": "TutorialText5",
+          "persistentUuid": "01a66f3a-c47d-4c95-bc9a-a9e32fc5df34",
+          "width": 0,
+          "x": 4534,
+          "y": 399,
+          "zOrder": 25,
           "numberProperties": [],
           "stringProperties": [],
           "initialVariables": []
@@ -12939,6 +13494,144 @@
                     {
                       "hasCustomCollisionMask": false,
                       "image": "Platform-1-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TextBubble5",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Shown",
+              "type": "boolean",
+              "value": false
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "TextBubble",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "TextBubble-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TextBubble4",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Shown",
+              "type": "boolean",
+              "value": false
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "TextBubble",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "TextBubble-1.png",
+                      "points": [],
+                      "originPoint": {
+                        "name": "origine",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "centerPoint": {
+                        "automatic": true,
+                        "name": "centre",
+                        "x": 0,
+                        "y": 0
+                      },
+                      "customCollisionMask": []
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "TextBubble3",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [
+            {
+              "name": "Shown",
+              "type": "boolean",
+              "value": false
+            }
+          ],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "TextBubble",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.07999999821186066,
+                  "sprites": [
+                    {
+                      "hasCustomCollisionMask": false,
+                      "image": "TextBubble-1.png",
                       "points": [],
                       "originPoint": {
                         "name": "origine",
@@ -13048,6 +13741,66 @@
         {
           "bold": false,
           "italic": false,
+          "name": "TutorialText5",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "This is an opponent Stix.\nThey can be controlled \nby people, but this is \njust a dummy. Beat it up!",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "TutorialText4",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "If you fall far enough\nyou can die. Be careful!",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
+          "name": "TutorialText3",
+          "smoothed": true,
+          "tags": "",
+          "type": "TextObject::Text",
+          "underlined": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "string": "Watch out for\nhazards! They\ncause damage\nand push you\nback.",
+          "font": "",
+          "characterSize": 20,
+          "color": {
+            "b": 0,
+            "g": 0,
+            "r": 0
+          }
+        },
+        {
+          "bold": false,
+          "italic": false,
           "name": "TutorialText2",
           "smoothed": true,
           "tags": "",
@@ -13086,6 +13839,36 @@
           }
         },
         {
+          "name": "TextShowPoint4",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": []
+        },
+        {
+          "name": "TextShowPoint3",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": []
+        },
+        {
+          "name": "TextShowPoint2",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": []
+        },
+        {
           "name": "TextShowPoint",
           "tags": "",
           "type": "Sprite",
@@ -13105,6 +13888,39 @@
           "variables": [],
           "effects": [],
           "behaviors": []
+        },
+        {
+          "name": "SpawnPoint",
+          "tags": "",
+          "type": "Sprite",
+          "updateIfNotVisible": false,
+          "variables": [],
+          "effects": [],
+          "behaviors": [],
+          "animations": [
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": []
+                }
+              ]
+            },
+            {
+              "name": "",
+              "useMultipleDirections": false,
+              "directions": [
+                {
+                  "looping": false,
+                  "timeBetweenFrames": 0.08,
+                  "sprites": []
+                }
+              ]
+            }
+          ]
         }
       ],
       "events": [
@@ -13116,6 +13932,66 @@
             "includeConfig": 0
           },
           "target": "Stix Events"
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "DepartScene"
+              },
+              "parameters": [
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialText2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TextBubble2"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialText3"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TextBubble3"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         },
         {
           "disabled": false,
@@ -13174,46 +14050,6 @@
               },
               "parameters": [
                 "TutorialText"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Cache"
-              },
-              "parameters": [
-                "TutorialText2"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Cache"
-              },
-              "parameters": [
-                "TextBubble2"
               ],
               "subInstructions": []
             }
@@ -13334,6 +14170,243 @@
               },
               "parameters": [
                 "TextBubble2"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "StixCharacterHitBox",
+                ">",
+                "TextShowPoint2.X()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextBubble3",
+                "Shown",
+                "False"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "TextBubble3",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "TutorialText3",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextBubble3",
+                "Shown",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "StixCharacterHitBox",
+                ">",
+                "TextShowPoint4.X()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextBubble5",
+                "Shown",
+                "False"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "TextBubble5",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "TutorialText5",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextBubble5",
+                "Shown",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "disabled": false,
+          "folded": false,
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextBubble5",
+                "Shown",
+                "True"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "BuiltinCommonInstructions::Once"
+              },
+              "parameters": [],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StixCharacter",
+                "SpawnPoint.CenterX()",
+                "SpawnPoint.CenterY()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "StixCharacterHitBox",
+                "StixCharacter.CenterX()",
+                "StixCharacter.CenterY()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::Character::StixOpponent"
+              },
+              "parameters": [
+                "StixCharacter",
+                "Character",
+                "SpawnPoint",
+                "StixCharacterHitBox",
+                "PlatformerObject",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::Character::StixHitBox"
+              },
+              "parameters": [
+                "StixCharacter",
+                "Character",
+                "StixCharacterHitBox",
+                "PlatformerObject",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::EnableStixAnimations"
+              },
+              "parameters": [
+                "",
+                "StixCharacter",
+                "StixCharacterHitBox",
+                "PlatformerObject",
+                "Sword"
               ],
               "subInstructions": []
             }
@@ -13485,84 +14558,6 @@
               },
               "parameters": [
                 "PhysicsPlatform"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        },
-        {
-          "disabled": false,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Comment",
-          "color": {
-            "b": 109,
-            "g": 230,
-            "r": 255,
-            "textB": 0,
-            "textG": 0,
-            "textR": 0
-          },
-          "comment": "Create a Stix opponent",
-          "comment2": ""
-        },
-        {
-          "disabled": true,
-          "folded": false,
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "DepartScene"
-              },
-              "parameters": [
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "StixCharacter",
-                "SpawnPoint.CenterX()",
-                "SpawnPoint.CenterY()",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "Create"
-              },
-              "parameters": [
-                "",
-                "StixCharacterHitBox",
-                "StixCharacter.CenterX()",
-                "StixCharacter.CenterY()",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "StixExtensions::Character::StixOpponent"
-              },
-              "parameters": [
-                "StixCharacter",
-                "Character",
-                "SpawnPoint",
-                "StixCharacterHitBox",
-                "PlatformerObject",
-                ""
               ],
               "subInstructions": []
             }
@@ -13779,6 +14774,14 @@
                         ""
                       ],
                       "subInstructions": []
+                    },
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::Once"
+                      },
+                      "parameters": [],
+                      "subInstructions": []
                     }
                   ],
                   "actions": [
@@ -13830,6 +14833,7 @@
                             "PlatformerObject",
                             "Hazards",
                             "Blood",
+                            "",
                             ""
                           ],
                           "subInstructions": []
@@ -18141,6 +19145,148 @@
     }
   ],
   "eventsFunctionsExtensions": [
+    {
+      "author": "@Bouh, @arthuro555",
+      "category": "",
+      "description": "This extension adds tools to access the clipboard.",
+      "extensionNamespace": "",
+      "fullName": "Clipboard",
+      "helpPath": "",
+      "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNsaXBib2FyZC10ZXh0LW11bHRpcGxlLW91dGxpbmUiIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNNCA3VjIxSDE4VjIzSDRDMi45IDIzIDIgMjIuMSAyIDIxVjdINE0yMCAzQzIxLjEgMyAyMiAzLjkgMjIgNVYxN0MyMiAxOC4xIDIxLjEgMTkgMjAgMTlIOEM2LjkgMTkgNiAxOC4xIDYgMTdWNUM2IDMuOSA2LjkgMyA4IDNIMTEuMThDMTEuNiAxLjg0IDEyLjcgMSAxNCAxQzE1LjMgMSAxNi40IDEuODQgMTYuODIgM0gyME0xNCAzQzEzLjQ1IDMgMTMgMy40NSAxMyA0QzEzIDQuNTUgMTMuNDUgNSAxNCA1QzE0LjU1IDUgMTUgNC41NSAxNSA0QzE1IDMuNDUgMTQuNTUgMyAxNCAzTTEwIDdWNUg4VjE3SDIwVjVIMThWN00xNSAxNUgxMFYxM0gxNU0xOCAxMUgxMFY5SDE4VjExWiIgLz48L3N2Zz4=",
+      "name": "Clipboard",
+      "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/clipboard-text-multiple-outline.svg",
+      "shortDescription": "Read and write the clipboard.",
+      "version": "1.0.0",
+      "origin": {
+        "identifier": "Clipboard",
+        "name": "gdevelop-extension-store"
+      },
+      "tags": [
+        "clipboard",
+        "pasteboard",
+        "paste",
+        "copy",
+        "write"
+      ],
+      "authorIds": [
+        "2OwwM8ToR9dx9RJ2sAKTcrLmCB92",
+        "ZgrsWuRTAkXgeuPV9bo0zuEcA2w1"
+      ],
+      "dependencies": [
+        {
+          "exportName": "cordova-clipboard",
+          "name": "Clipboard API Support for mobile",
+          "type": "cordova",
+          "version": "1.3.0"
+        }
+      ],
+      "eventsFunctions": [
+        {
+          "description": "Read the text from the clipboard asynchronously. As this is \"asynchronous\", this means that the variable won't be immediately filled with the text from the clipboard. Instead, it will be filled a few milliseconds later.\n\nNote also that on web browsers, the user might be asked for permissions to read from the clipboard.",
+          "fullName": "Get text from the clipboard",
+          "functionType": "Action",
+          "group": "",
+          "name": "ReadTextCrossPlaform",
+          "private": false,
+          "sentence": "Read clipboard and store text in _PARAM1_",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "const electron = runtimeScene.getGame().getRenderer().getElectron();\nconst callback =\n    runtimeScene\n        .getVariables()\n        .get(eventsFunctionContext.getArgument(\"callback\"));\n\nif (electron !== null && electron.clipboard)\n    callback.setString(electron.clipboard.readText());\nelse if (\n    typeof cordova !== \"undefined\" &&\n    cordova.plugins &&\n    cordova.plugins.clipboard\n) cordova.plugins.clipboard.paste(text => callback.setString(text));\nelse if (\n    typeof navigator !== \"undefined\" &&\n    navigator.clipboard &&\n    navigator.clipboard.readText\n) {\n    navigator.clipboard.readText()\n        .then(text => callback.setString(text))\n        .catch(err =>\n            console.error(\"Error occured while getting clipboard content: \", err.message)\n        );\n} else console.error(\"Unable to read from the clipboard: no method found for this platform.\")\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Callback variable where to store the result",
+              "longDescription": "",
+              "name": "callback",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Write the text in the clipboard.",
+          "fullName": "Write text to the clipboard",
+          "functionType": "Action",
+          "group": "",
+          "name": "WriteText",
+          "private": false,
+          "sentence": "Write _PARAM1_ to clipboard",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "const electron = runtimeScene.getGame().getRenderer().getElectron();\nconst text = eventsFunctionContext.getArgument(\"text\");\n\nif (electron !== null && electron.clipboard)\n  electron.clipboard.writeText(text);\nelse if (\n  typeof cordova !== \"undefined\" &&\n  cordova.plugins &&\n  cordova.plugins.clipboard\n) cordova.plugins.clipboard.copy(text);\nelse if (\n  typeof navigator !== \"undefined\" &&\n  navigator.clipboard &&\n  navigator.clipboard.writeText\n) navigator.clipboard\n  .writeText(text)\n  .catch(e => console.error(\"Error while writing clipboard: \", e));\nelse console.error(\"Unable to write to the clipboard: no method found for this platform.\"); \n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [
+            {
+              "codeOnly": false,
+              "defaultValue": "",
+              "description": "Text to write to clipboard",
+              "longDescription": "",
+              "name": "text",
+              "optional": false,
+              "supplementaryInformation": "",
+              "type": "string"
+            }
+          ],
+          "objectGroups": []
+        },
+        {
+          "description": "Read the text from the clipboard (Windows, macOS, Linux only)",
+          "fullName": "Get text from the clipboard (Windows, macOS, Linux)",
+          "functionType": "StringExpression",
+          "group": "",
+          "name": "ReadText",
+          "private": true,
+          "sentence": "",
+          "events": [
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::Comment",
+              "color": {
+                "b": 109,
+                "g": 230,
+                "r": 255,
+                "textB": 0,
+                "textG": 0,
+                "textR": 0
+              },
+              "comment": "This is here for retrocompatibility. Try to use the asynchronous readTextCrossPlatform action instead.",
+              "comment2": ""
+            },
+            {
+              "disabled": false,
+              "folded": false,
+              "type": "BuiltinCommonInstructions::JsCode",
+              "inlineCode": "const electron = runtimeScene.getGame().getRenderer().getElectron();\nif (electron && electron.clipboard) eventsFunctionContext.returnValue = electron.clipboard.readText();\n",
+              "parameterObjects": "",
+              "useStrict": true,
+              "eventsSheetExpanded": false
+            }
+          ],
+          "parameters": [],
+          "objectGroups": []
+        }
+      ],
+      "eventsBasedBehaviors": []
+    },
     {
       "author": "Arthur Pacaud (arthuro555)",
       "category": "",
@@ -24289,7 +25435,7 @@
               "longDescription": "",
               "name": "Hazards",
               "optional": false,
-              "supplementaryInformation": "Sprite",
+              "supplementaryInformation": "",
               "type": "objectList"
             },
             {
@@ -24986,6 +26132,76 @@
                   "disabled": false,
                   "folded": false,
                   "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "Hazard.CenterX() - HitBox.CenterX()",
+                        ">=",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "AddForceXY"
+                      },
+                      "parameters": [
+                        "HitBox",
+                        "-200",
+                        "-200",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "BuiltinCommonInstructions::CompareNumbers"
+                      },
+                      "parameters": [
+                        "Hazard.CenterX() - HitBox.CenterX()",
+                        "<",
+                        "0"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "AddForceXY"
+                      },
+                      "parameters": [
+                        "HitBox",
+                        "200",
+                        "-200",
+                        "1"
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "disabled": false,
+                  "folded": false,
+                  "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [],
                   "actions": [
                     {
@@ -25073,76 +26289,6 @@
                     }
                   ],
                   "events": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "BuiltinCommonInstructions::CompareNumbers"
-                      },
-                      "parameters": [
-                        "Hazard.CenterX() - HitBox.CenterX()",
-                        ">=",
-                        "0"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "AddForceXY"
-                      },
-                      "parameters": [
-                        "HitBox",
-                        "-200",
-                        "-200",
-                        "1"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
-                },
-                {
-                  "disabled": false,
-                  "folded": false,
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "BuiltinCommonInstructions::CompareNumbers"
-                      },
-                      "parameters": [
-                        "Hazard.CenterX() - HitBox.CenterX()",
-                        "<",
-                        "0"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "AddForceXY"
-                      },
-                      "parameters": [
-                        "HitBox",
-                        "200",
-                        "-200",
-                        "1"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
                 }
               ],
               "parameters": [
@@ -25193,7 +26339,7 @@
                   "longDescription": "",
                   "name": "Hazard",
                   "optional": false,
-                  "supplementaryInformation": "Sprite",
+                  "supplementaryInformation": "",
                   "type": "objectList"
                 },
                 {
