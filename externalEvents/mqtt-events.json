@@ -1,0 +1,88 @@
+{
+  "associatedLayout": "Forest",
+  "lastChangeTimeStamp": 0,
+  "name": "MQTT Events",
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "GlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "IsMQTTConnected",
+            "False"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "MQTT::connect"
+          },
+          "parameters": [
+            "",
+            "GlobalVariableString(MQTTHost)",
+            "\"{\\\"clientId\\\": \\\"\" + GlobalVariableString(Username) + \"\\\", \\\"username\\\": \\\"\" + GlobalVariableString(Username) + \"\\\", \\\"password\\\": \\\"\" + GlobalVariableString(Password) + \"\\\",\n\\\"will\\\": { \\\"topic\\\": \\\"\" + StixExtensions::PlayerTopic(GlobalVariableString(GameId), \"disconnect\", GlobalVariableString(PlayerId)) + \"\\\", \\\"payload\\\": \\\"\" + GlobalVariableString(PlayerId) + \"\\\",\n\\\"qos\\\": \\\"2\\\"}}\"",
+            "yes",
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "MQTT::isConnected"
+          },
+          "parameters": [
+            "",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": [],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetGlobalVariableAsBoolean"
+          },
+          "parameters": [
+            "IsMQTTConnected",
+            "True"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    }
+  ]
+}

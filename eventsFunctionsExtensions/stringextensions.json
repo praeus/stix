@@ -1,0 +1,198 @@
+{
+  "author": "",
+  "category": "General",
+  "description": "StringBeginsWith - Condition which is true when the string begins with a substring.\nRemoveSubstring - Expression which returns a new string from a initial string with a substring removed.\nMaskPassword - Expression which returns text with * for each character in the passed in string.\nTrim - Expression which returns a string with beginning and trailing whitespace removed.\nIsEmpty - Condition which is true when the string is either an empty string (\"\") or a \"0\" (since that seems to be the default value for empty strings in some cases).",
+  "extensionNamespace": "",
+  "fullName": "String Extensions",
+  "helpPath": "",
+  "iconUrl": "data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiBpZD0ibWRpLWNvZGUtc3RyaW5nIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTMsNUEyLDIgMCAwLDEgNSwzSDE5QTIsMiAwIDAsMSAyMSw1VjE5QTIsMiAwIDAsMSAxOSwyMUg1QzMuODksMjEgMywyMC4xIDMsMTlWNU0xMi41LDExSDExLjVBMS41LDEuNSAwIDAsMSAxMCw5LjVBMS41LDEuNSAwIDAsMSAxMS41LDhIMTIuNUExLjUsMS41IDAgMCwxIDE0LDkuNUgxNkEzLjUsMy41IDAgMCwwIDEyLjUsNkgxMS41QTMuNSwzLjUgMCAwLDAgOCw5LjVBMy41LDMuNSAwIDAsMCAxMS41LDEzSDEyLjVBMS41LDEuNSAwIDAsMSAxNCwxNC41QTEuNSwxLjUgMCAwLDEgMTIuNSwxNkgxMS41QTEuNSwxLjUgMCAwLDEgMTAsMTQuNUg4QTMuNSwzLjUgMCAwLDAgMTEuNSwxOEgxMi41QTMuNSwzLjUgMCAwLDAgMTYsMTQuNUEzLjUsMy41IDAgMCwwIDEyLjUsMTFaIiAvPjwvc3ZnPg==",
+  "name": "StringExtensions",
+  "previewIconUrl": "https://resources.gdevelop-app.com/assets/Icons/code-string.svg",
+  "shortDescription": "Adds string functions StringBeginsWith, RemoveSubstring, MaskPassword, Trim and IsEmpty",
+  "version": "0.01",
+  "tags": [
+    "Strings"
+  ],
+  "authorIds": [
+    "I9lf0cCEJyQSEm81kGVTjydlgv02"
+  ],
+  "dependencies": [],
+  "eventsFunctions": [
+    {
+      "description": "Checks if the string begin with a given substring",
+      "fullName": "String begins with?",
+      "functionType": "Condition",
+      "group": "",
+      "name": "StringBeginsWith",
+      "private": false,
+      "sentence": "_PARAM1_ begins with _PARAM2_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "    const string = eventsFunctionContext.getArgument(\"String\");\n    const substring = eventsFunctionContext.getArgument(\"Substring\");\n    eventsFunctionContext.returnValue = string.startsWith(substring);\n",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "String to check for a substring",
+          "longDescription": "",
+          "name": "String",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "The substring to check for",
+          "longDescription": "",
+          "name": "Substring",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Remove a substring from a string",
+      "fullName": "Remove a substring from a string",
+      "functionType": "StringExpression",
+      "group": "",
+      "name": "RemoveSubstring",
+      "private": false,
+      "sentence": "Remove _PARAM2_ from _PARAM1_ and store the result in variable _PARAM3_",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "    const string = eventsFunctionContext.getArgument(\"String\");\n    const substring = eventsFunctionContext.getArgument(\"Substring\");\n    const removed = string.replace(substring, \"\");\n    eventsFunctionContext.returnValue = removed;",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "String to remove from",
+          "longDescription": "",
+          "name": "String",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        },
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Substring to remove",
+          "longDescription": "",
+          "name": "Substring",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Mask password with asterisks",
+      "fullName": "Mask password",
+      "functionType": "StringExpression",
+      "group": "",
+      "name": "MaskPassword",
+      "private": false,
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "    const string = eventsFunctionContext.getArgument(\"Password\").trim();\n    let mask = \"\";\n    for (let i = 0; i < string.length; i++) {\n        mask += \"*\";\n    }\n    eventsFunctionContext.returnValue = mask;\n",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "Password",
+          "longDescription": "",
+          "name": "Password",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Trim whitespace from around string",
+      "fullName": "Trim whitespace",
+      "functionType": "StringExpression",
+      "group": "",
+      "name": "Trim",
+      "private": false,
+      "sentence": "",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "const string = eventsFunctionContext.getArgument(\"String\");\neventsFunctionContext.returnValue = string.trim();",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "String to trim",
+          "longDescription": "",
+          "name": "String",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    },
+    {
+      "description": "Check if the string  is empty",
+      "fullName": "Is the string empty?",
+      "functionType": "Condition",
+      "group": "",
+      "name": "IsEmpty",
+      "private": false,
+      "sentence": "The  string _PARAM1_ is empty",
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::JsCode",
+          "inlineCode": "  const string = eventsFunctionContext.getArgument(\"String\");\n  eventsFunctionContext.returnValue = (string == \"\") || (string == \"0\");\n\n  ",
+          "parameterObjects": "",
+          "useStrict": true,
+          "eventsSheetExpanded": false
+        }
+      ],
+      "parameters": [
+        {
+          "codeOnly": false,
+          "defaultValue": "",
+          "description": "String to check for empty",
+          "longDescription": "",
+          "name": "String",
+          "optional": false,
+          "supplementaryInformation": "",
+          "type": "string"
+        }
+      ],
+      "objectGroups": []
+    }
+  ],
+  "eventsBasedBehaviors": []
+}

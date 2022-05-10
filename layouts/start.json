@@ -1,0 +1,2666 @@
+{
+  "b": 109,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Start",
+  "name": "Start",
+  "oglFOV": 90,
+  "oglZFar": 500,
+  "oglZNear": 1,
+  "r": 70,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 89,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.5294,
+    "windowMask": false
+  },
+  "objectsGroups": [],
+  "variables": [
+    {
+      "name": "Selected",
+      "type": "string",
+      "value": ""
+    },
+    {
+      "name": "IsSelected",
+      "type": "boolean",
+      "value": false
+    }
+  ],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "7975e4f3-2457-4839-bf0c-4dd10ce71152",
+      "width": 35.168235778808594,
+      "x": 17.7276611328125,
+      "y": 29.94993782043457,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 44.528350830078125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "e5d5e546-8bc8-4892-9880-dcc7599450c1",
+      "width": 35.168235778808594,
+      "x": 59.629127502441406,
+      "y": 12.776134490966797,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 267.0564270019531,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "f5d791f5-ac0d-49b8-b0aa-a2b860cf2083",
+      "width": 35.168235778808594,
+      "x": 102.57044982910156,
+      "y": 29.619653701782227,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "06caee20-92f6-4acc-85c5-71162946d2c4",
+      "width": 35.168235778808594,
+      "x": 0.28357696533203125,
+      "y": 71.57218933105469,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 251.62542724609375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "b377c41a-00f2-43bc-90c1-f0203d31fce5",
+      "width": 35.168235778808594,
+      "x": 21.87322998046875,
+      "y": 107.13092041015625,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 44.528350830078125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "d52c65af-5fd0-4950-9ccd-8aa9c8a34eda",
+      "width": 35.168235778808594,
+      "x": 68.14280700683594,
+      "y": 117.460205078125,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 280.06219482421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "29eaa851-369f-4880-ac39-9b4530562cd3",
+      "width": 35.168235778808594,
+      "x": 107.24249267578125,
+      "y": 137.59840393066406,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "e39bf549-4bf3-471f-943f-70b0f3a10d3f",
+      "width": 35.168235778808594,
+      "x": 120.89433288574219,
+      "y": 182.02243041992188,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "bd4eebc2-d3f0-40f3-a58a-4df5d67b2b44",
+      "width": 35.168235778808594,
+      "x": 103.99974060058594,
+      "y": 223.9247283935547,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 44.528350830078125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "6f712509-0929-475a-96fd-17e60461ae6d",
+      "width": 35.168235778808594,
+      "x": 62.64778137207031,
+      "y": 240.5490264892578,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 251.62542724609375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "18d112e4-293a-454b-a165-82ad01321da2",
+      "width": 35.168235778808594,
+      "x": 16.927696228027344,
+      "y": 229.7187957763672,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 44.528350830078125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "ebf58d90-a57f-45a7-b031-add404933472",
+      "width": 35.168235778808594,
+      "x": 181.28273010253906,
+      "y": 23.54902458190918,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 44.528350830078125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "3c49a801-d814-4c8b-993c-cb0df768d492",
+      "width": 35.168235778808594,
+      "x": 231.01644897460938,
+      "y": 23.54902458190918,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "e0fbd496-e4c7-4afe-af6e-56648bdee45d",
+      "width": 35.168235778808594,
+      "x": 206.28189086914062,
+      "y": 48.548187255859375,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "fc21b9c7-3908-464d-a855-1027239e7450",
+      "width": 35.168235778808594,
+      "x": 206.28189086914062,
+      "y": 96.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "c436e7c3-0ab7-4d72-867f-cb6f0a016e39",
+      "width": 35.168235778808594,
+      "x": 206.01727294921875,
+      "y": 145.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "834b95a2-2d95-47ef-a796-6d79d2ad3797",
+      "width": 35.168235778808594,
+      "x": 206.28189086914062,
+      "y": 194.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "27e6faf2-8300-40c7-a737-9c643b28a61b",
+      "width": 35.168235778808594,
+      "x": 206.28189086914062,
+      "y": 219.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "11444370-2e5f-4802-9a90-78d56ccf5290",
+      "width": 35.168235778808594,
+      "x": 332.5481872558594,
+      "y": 43.548187255859375,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "7d9217ce-3839-4ddc-b696-72bf5b1a2da5",
+      "width": 35.168235778808594,
+      "x": 332.5481872558594,
+      "y": 91.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "8c1177ff-53b8-4a38-b30c-f4d18f27368b",
+      "width": 35.168235778808594,
+      "x": 332.2835693359375,
+      "y": 140.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "6b5be0e1-5521-4340-8dbb-4db9e51a3626",
+      "width": 35.168235778808594,
+      "x": 332.5481872558594,
+      "y": 189.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 315.0203857421875,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "53e852ed-a8d7-40d1-8d36-1f9afd7e70fb",
+      "width": 35.168235778808594,
+      "x": 332.5481872558594,
+      "y": 214.54818725585938,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 288.57568359375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "4949f856-83ac-452f-8ac0-9fee26a402ab",
+      "width": 35.168235778808594,
+      "x": 417.4549865722656,
+      "y": 43.109352111816406,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 288.57568359375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "e14d2635-2346-485f-8dac-945b7ae55b39",
+      "width": 35.168235778808594,
+      "x": 438.8310241699219,
+      "y": 86.08684539794922,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 288.57568359375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "5fdcf371-b514-470e-9b39-85b94da64c1d",
+      "width": 35.168235778808594,
+      "x": 460.41546630859375,
+      "y": 130.07754516601562,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 288.57568359375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "d94e5f02-1c95-4d04-a874-4ce3c5a5ff0b",
+      "width": 35.168235778808594,
+      "x": 482.4737548828125,
+      "y": 173.8325653076172,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 288.57568359375,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "6b734ebb-43c3-40e9-b323-981771f8130b",
+      "width": 35.168235778808594,
+      "x": 504.14630126953125,
+      "y": 217.755859375,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 339.68408203125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "12a04f24-b95d-4a08-9965-796cd5b34982",
+      "width": 35.168235778808594,
+      "x": 503.26904296875,
+      "y": 41.01127624511719,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 339.68408203125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "09828147-0143-4212-acdd-ee46dffe13cc",
+      "width": 35.168235778808594,
+      "x": 483.239013671875,
+      "y": 84.63236999511719,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 339.68408203125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "37143d8f-66b9-4b38-a891-5d9c75f1c237",
+      "width": 35.168235778808594,
+      "x": 462.55133056640625,
+      "y": 129.05181884765625,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 339.68408203125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "0465a6a8-a4f6-46c1-bca2-e4b5a4113d5d",
+      "width": 35.168235778808594,
+      "x": 442.3445129394531,
+      "y": 173.69210815429688,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 339.68408203125,
+      "customSize": true,
+      "height": 35.168235778808594,
+      "layer": "",
+      "locked": false,
+      "name": "StixTitlePiece",
+      "persistentUuid": "4d8567f7-f3e6-4add-b383-a0bd60374441",
+      "width": 35.168235778808594,
+      "x": 421.7645568847656,
+      "y": 218.13778686523438,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "PlaySolo",
+      "persistentUuid": "16a9625a-4561-4b13-985d-7494c8c3974a",
+      "width": 0,
+      "x": 157,
+      "y": 392,
+      "zOrder": 3,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Tutorial",
+      "persistentUuid": "b73d5472-26a1-456c-8600-ef238b5b89ea",
+      "width": 0,
+      "x": 112,
+      "y": 309,
+      "zOrder": 4,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Network",
+      "persistentUuid": "1820e47b-90f8-43de-a382-55ba590497b7",
+      "width": 0,
+      "x": 218,
+      "y": 477,
+      "zOrder": 5,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 83,
+      "layer": "",
+      "locked": false,
+      "name": "TutorialSelect",
+      "persistentUuid": "7b368628-c6ab-4ab2-bc7c-61d070703767",
+      "width": 292,
+      "x": 66,
+      "y": 290,
+      "zOrder": 6,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 276,
+      "layer": "",
+      "locked": false,
+      "name": "StixCharacter",
+      "persistentUuid": "20d9c2cc-0b4c-4db1-826b-936636041207",
+      "width": 278,
+      "x": 527,
+      "y": 266,
+      "zOrder": 7,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 59,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "038e0167-49e0-4a4e-993c-f2a76ae67a38",
+      "width": 1295,
+      "x": 562,
+      "y": 543,
+      "zOrder": 8,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 88,
+      "layer": "",
+      "locked": false,
+      "name": "SoloSelect",
+      "persistentUuid": "eb04f532-d6a9-49d4-ab62-fef9e3d3e1a7",
+      "width": 294,
+      "x": 126,
+      "y": 372,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 89,
+      "layer": "",
+      "locked": false,
+      "name": "NetSelect",
+      "persistentUuid": "b1b985f9-c932-4769-9e46-4a499862ae79",
+      "width": 294,
+      "x": 198,
+      "y": 458,
+      "zOrder": 10,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 1962,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "e2ac82a7-8e5c-4c7e-911e-befb3ba85e0d",
+      "width": 2857,
+      "x": -934,
+      "y": -764,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Center",
+      "persistentUuid": "52fa9c31-d405-48e6-b758-19e5a4cb0158",
+      "width": 0,
+      "x": 358,
+      "y": 299,
+      "zOrder": 11,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Help",
+      "persistentUuid": "9168fd40-56ba-4e33-a8a8-aba5b1ff5199",
+      "width": 0,
+      "x": 37,
+      "y": 561,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 30,
+      "layer": "",
+      "locked": false,
+      "name": "Gear",
+      "persistentUuid": "609bd9d5-fa23-4f60-9712-3c9a794876bc",
+      "width": 30,
+      "x": 495,
+      "y": 556,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 42,
+      "layer": "",
+      "locked": false,
+      "name": "SettingsSelect",
+      "persistentUuid": "690b9724-0a69-4979-bafb-e29f33765b33",
+      "width": 40,
+      "x": 490,
+      "y": 550,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "name": "PhysicalTitlePiece",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Polygon",
+          "shapeDimensionA": 90,
+          "shapeDimensionB": 135,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [
+            {
+              "x": 29,
+              "y": -32
+            },
+            {
+              "x": 32,
+              "y": -28
+            },
+            {
+              "x": -29,
+              "y": 32
+            },
+            {
+              "x": -32,
+              "y": 27
+            }
+          ],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 1,
+          "masks": 1
+        }
+      ],
+      "animations": [
+        {
+          "name": "StixTitlePiece",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "StixTitlePiece-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "StixTitlePiece",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "StixTitlePiece",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "StixTitlePiece-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "LargeStix",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [
+        {
+          "effectType": "Glow",
+          "name": "Glow",
+          "doubleParameters": {
+            "distance": 15,
+            "innerStrength": 1,
+            "outerStrength": 2
+          },
+          "stringParameters": {
+            "color": "#ffffff"
+          },
+          "booleanParameters": {}
+        }
+      ],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Wave",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.05559999868273735,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Wave-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Wave-2.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Wave-3.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Wave-4.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                },
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Wave-5.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Tutorial",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][size=30][shadow=blue]Play Tutorial[/shadow] [/size] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "58;26;65",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": false
+      }
+    },
+    {
+      "name": "Network",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][size=30][shadow=blue]Log on to StixNet[/shadow] [/size] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "58;26;65",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": false
+      }
+    },
+    {
+      "name": "PlaySolo",
+      "tags": "",
+      "type": "BBText::BBText",
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "content": {
+        "text": "[b][size=30][shadow=blue]Play Solo Game[/shadow] [/size] [/b]",
+        "opacity": 255,
+        "fontSize": 20,
+        "visible": true,
+        "color": "58;26;65",
+        "fontFamily": "Arial",
+        "align": "left",
+        "wordWrap": false
+      }
+    },
+    {
+      "name": "NetSelect",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "TitleSelect",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "TitleSelect-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SoloSelect",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "TitleSelect",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "TitleSelect-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TutorialSelect",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "TitleSelect",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "TitleSelect-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "SettingsSelect",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "TitleSelect",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "TitleSelect-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Platform",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior",
+          "canBeGrabbed": false,
+          "platformType": "NormalPlatform",
+          "yGrabOffset": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "Platform",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Platform-1-0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "height": 128,
+      "name": "BlueBackground",
+      "tags": "",
+      "texture": "tiled_Blue background.png",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 128,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "name": "Center",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": []
+    },
+    {
+      "bold": false,
+      "italic": false,
+      "name": "Help",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "string": "Use Up/Down + Enter Keys, Tap, or Mouse to Select an Option",
+      "font": "",
+      "characterSize": 16,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "name": "Gear",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.02500000037252903,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Gear.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetCameraX"
+          },
+          "parameters": [
+            "",
+            "=",
+            "Center.CenterX()",
+            "",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetCameraY"
+          },
+          "parameters": [
+            "",
+            "=",
+            "Center.CenterY()",
+            "",
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "DepartScene"
+          },
+          "parameters": [
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "SoloSelect"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "NetSelect"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ModVarSceneTxt"
+          },
+          "parameters": [
+            "Selected",
+            "=",
+            "\"Tutorial\""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "SettingsSelect"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "Gear"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "KeyReleased"
+          },
+          "parameters": [
+            "",
+            "Down"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Solo\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "SoloSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "NetSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Net\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Tutorial\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "SoloSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "NetSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Solo\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "KeyReleased"
+          },
+          "parameters": [
+            "",
+            "Up"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Solo\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "SoloSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "NetSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "TutorialSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Tutorial\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Net\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "SoloSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "NetSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Solo\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "KeyReleased"
+          },
+          "parameters": [
+            "",
+            "Return"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetAnimationName"
+          },
+          "parameters": [
+            "StixCharacter",
+            "\"Running\""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "StixCharacter",
+            "150",
+            "0",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"StartTimer\""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "NetSelect"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "SoloSelect"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "TutorialSelect"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "Tutorial",
+            "-350",
+            "0",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "Network",
+            "-350",
+            "0",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "PlaySolo",
+            "-350",
+            "0",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Cache"
+          },
+          "parameters": [
+            "Help"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "StixTitlePiece",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Create"
+              },
+              "parameters": [
+                "",
+                "PhysicalTitlePiece",
+                "StixTitlePiece.X()",
+                "StixTitlePiece.Y()",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "RotateTowardAngle"
+              },
+              "parameters": [
+                "PhysicalTitlePiece",
+                "StixTitlePiece.Angle()",
+                "0",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSize"
+              },
+              "parameters": [
+                "PhysicalTitlePiece",
+                "StixTitlePiece.Width()",
+                "StixTitlePiece.Height()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "StixTitlePiece"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Physics2::ApplyTorque"
+              },
+              "parameters": [
+                "PhysicalTitlePiece",
+                "Physics2",
+                "5"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "KeyReleased"
+          },
+          "parameters": [
+            "",
+            "Tab"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetAnimationName"
+          },
+          "parameters": [
+            "StixCharacter",
+            "\"Running\""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "StixCharacter",
+            "75",
+            "0",
+            "1"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "AddForceXY"
+          },
+          "parameters": [
+            "Center",
+            "150",
+            "0",
+            "1"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "StixTitlePiece",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "StixTitlePiece",
+                "150",
+                "0",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "BuiltinCommonInstructions::CompareNumbers"
+          },
+          "parameters": [
+            "Center.X() - 200",
+            ">=",
+            "StixCharacter.X()"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": [],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ResetTimer"
+          },
+          "parameters": [
+            "",
+            "\"StartTimer\""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Arreter"
+          },
+          "parameters": [
+            "StixCharacter"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "Arreter"
+          },
+          "parameters": [
+            "Center"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "StixTitlePiece",
+          "conditions": [],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Arreter"
+              },
+              "parameters": [
+                "StixTitlePiece"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "MouseButtonReleased"
+          },
+          "parameters": [
+            "PasswordSelect",
+            "Left"
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "BuiltinCommonInstructions::Once"
+          },
+          "parameters": [],
+          "subInstructions": []
+        }
+      ],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "SetSceneVariableAsBoolean"
+          },
+          "parameters": [
+            "IsSelected",
+            "False"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "SoloSelect",
+                "MouseX()",
+                "MouseY()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "SoloSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "NetSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Solo\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "IsSelected",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "NetSelect",
+                "MouseX()",
+                "MouseY()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "SoloSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "NetSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "TutorialSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Net\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "IsSelected",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "CollisionPoint"
+              },
+              "parameters": [
+                "TutorialSelect",
+                "MouseX()",
+                "MouseY()"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "SoloSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Cache"
+              },
+              "parameters": [
+                "NetSelect"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "Montre"
+              },
+              "parameters": [
+                "TutorialSelect",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Tutorial\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetSceneVariableAsBoolean"
+              },
+              "parameters": [
+                "IsSelected",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SceneVariableAsBoolean"
+              },
+              "parameters": [
+                "IsSelected",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ResetTimer"
+              },
+              "parameters": [
+                "",
+                "\"StartTimer\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetAnimationName"
+              },
+              "parameters": [
+                "StixCharacter",
+                "\"Running\""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "AddForceXY"
+              },
+              "parameters": [
+                "StixCharacter",
+                "150",
+                "0",
+                "1"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::ForEach",
+              "object": "StixTitlePiece",
+              "conditions": [],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Create"
+                  },
+                  "parameters": [
+                    "",
+                    "PhysicalTitlePiece",
+                    "StixTitlePiece.X()",
+                    "StixTitlePiece.Y()",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "RotateTowardAngle"
+                  },
+                  "parameters": [
+                    "PhysicalTitlePiece",
+                    "StixTitlePiece.Angle()",
+                    "0",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "SetSize"
+                  },
+                  "parameters": [
+                    "PhysicalTitlePiece",
+                    "StixTitlePiece.Width()",
+                    "StixTitlePiece.Height()"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Cache"
+                  },
+                  "parameters": [
+                    "StixTitlePiece"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "CompareTimer"
+          },
+          "parameters": [
+            "",
+            "\"StartTimer\"",
+            ">=",
+            "1.2"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Tutorial\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Tutorial\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Solo\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Forest\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarSceneTxt"
+              },
+              "parameters": [
+                "Selected",
+                "=",
+                "\"Net\""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "Scene"
+              },
+              "parameters": [
+                "",
+                "\"Login\"",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 16777215,
+      "ambientLightColorG": 0,
+      "ambientLightColorR": 0,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": []
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "CanBeDamaged",
+      "type": "StixExtensions::CanBeDamaged"
+    },
+    {
+      "name": "Character",
+      "type": "StixExtensions::Character"
+    },
+    {
+      "name": "Physics2",
+      "type": "Physics2::Physics2Behavior",
+      "gravityX": 0,
+      "gravityY": 9.8,
+      "scaleX": 100,
+      "scaleY": 100
+    },
+    {
+      "name": "Platform",
+      "type": "PlatformBehavior::PlatformBehavior"
+    },
+    {
+      "name": "PlatformerObject",
+      "type": "PlatformBehavior::PlatformerObjectBehavior"
+    },
+    {
+      "name": "Sticker",
+      "type": "Sticker::Sticker"
+    }
+  ]
+}

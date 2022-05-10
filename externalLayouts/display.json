@@ -1,0 +1,120 @@
+{
+  "associatedLayout": "Industry",
+  "name": "Display",
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "Display",
+      "locked": false,
+      "name": "HealthBar",
+      "persistentUuid": "d6a3dbc2-4f6b-4e69-a3de-43d8d3526417",
+      "width": 230,
+      "x": 21.068634033203125,
+      "y": 14,
+      "zOrder": 95,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 31,
+      "layer": "Display",
+      "locked": false,
+      "name": "HealthBarBorder",
+      "persistentUuid": "aa4cfa90-a90d-45f5-b526-cc9fc87fd2b7",
+      "width": 230,
+      "x": 21,
+      "y": 14.71068000793457,
+      "zOrder": 94,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 16,
+      "layer": "",
+      "locked": false,
+      "name": "DeathIcon",
+      "persistentUuid": "49e72ba4-bb39-439b-bcb6-e766f16e5e8d",
+      "width": 16,
+      "x": 21,
+      "y": 50,
+      "zOrder": 96,
+      "numberProperties": [
+        {
+          "name": "animation",
+          "value": 0
+        }
+      ],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "KillIcon",
+      "persistentUuid": "d09ae70f-1dad-4613-a41b-1bde67b60236",
+      "width": 0,
+      "x": 100,
+      "y": 51,
+      "zOrder": 97,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "DeathCount",
+      "persistentUuid": "1ffbb5f3-d006-46c4-a79a-17e34c940ca2",
+      "width": 0,
+      "x": 50,
+      "y": 47,
+      "zOrder": 98,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "KillCount",
+      "persistentUuid": "e0031afc-bb32-4383-be1b-8a38285c8bb3",
+      "width": 0,
+      "x": 129,
+      "y": 47,
+      "zOrder": 99,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "editionSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 1.2335895642140229,
+    "windowMask": false
+  }
+}

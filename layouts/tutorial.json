@@ -1,0 +1,1383 @@
+{
+  "b": 39,
+  "disableInputWhenNotFocused": true,
+  "mangledName": "Tutorial",
+  "name": "Tutorial",
+  "oglFOV": 90,
+  "oglZFar": 500,
+  "oglZNear": 1,
+  "r": 45,
+  "standardSortMethod": true,
+  "stopSoundsOnStartup": true,
+  "title": "",
+  "v": 51,
+  "uiSettings": {
+    "grid": false,
+    "gridType": "rectangular",
+    "gridWidth": 32,
+    "gridHeight": 32,
+    "gridOffsetX": 0,
+    "gridOffsetY": 0,
+    "gridColor": 10401023,
+    "gridAlpha": 0.8,
+    "snap": false,
+    "zoomFactor": 0.24319999999999972,
+    "windowMask": false
+  },
+  "objectsGroups": [
+    {
+      "name": "Weapons",
+      "objects": [
+        {
+          "name": "StickSword"
+        }
+      ]
+    },
+    {
+      "name": "Group",
+      "objects": []
+    },
+    {
+      "name": "Deletion",
+      "objects": [
+        {
+          "name": "StickSword"
+        },
+        {
+          "name": "StixHead"
+        },
+        {
+          "name": "StixSticks"
+        }
+      ]
+    }
+  ],
+  "variables": [
+    {
+      "name": "TutorialText",
+      "type": "array",
+      "children": [
+        {
+          "type": "string",
+          "value": "Hello there! I'm Stix.\nYou can move me \nusing the left and \nright buttons."
+        },
+        {
+          "type": "string",
+          "value": "Touch the weapon\nto pick it up.\nTo use it, press\nthe \"f\" key."
+        },
+        {
+          "type": "string",
+          "value": "Watch for hazards!\nThey damage\nand push you back.\nJump over them with\n'space' or 'shift'. "
+        },
+        {
+          "type": "string",
+          "value": "If you fall far \nenough you can \ndie. Be careful!"
+        },
+        {
+          "type": "string",
+          "value": "This is an opponent\nStix. They can be \ncontrolled by people, \nbut this is just a \ndummy. Beat em up!"
+        }
+      ]
+    },
+    {
+      "name": "TextIndex",
+      "type": "string",
+      "value": "0"
+    },
+    {
+      "name": "NextInstanceId",
+      "type": "string",
+      "value": "1"
+    }
+  ],
+  "instances": [
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "8d1a3d12-917b-4bd0-b4aa-26d90cd5ed0e",
+      "width": 3811,
+      "x": 93,
+      "y": 395,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "83fb3f1c-ed21-4747-b464-e20f7dd99f2d",
+      "width": 439,
+      "x": -117.5,
+      "y": 183.5,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "ee65ba09-437b-4019-88c7-9d7c7fe17f60",
+      "width": 4979,
+      "x": 1837.5,
+      "y": 3219.5,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "TextShowPoint",
+      "persistentUuid": "07c3503d-bd8c-46f1-992c-aa0ed389dd9d",
+      "width": 0,
+      "x": 173,
+      "y": 290,
+      "zOrder": 9,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 30,
+      "layer": "Layer",
+      "locked": false,
+      "name": "HealthBar",
+      "persistentUuid": "5af3cbba-4013-49ed-bec6-b222897ef4fd",
+      "width": 242,
+      "x": 23,
+      "y": 31,
+      "zOrder": 13,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 32,
+      "layer": "Layer",
+      "locked": false,
+      "name": "HealthBarBorder",
+      "persistentUuid": "de0e4bdf-791e-4682-ad61-94c30a3f8007",
+      "width": 244,
+      "x": 22,
+      "y": 30,
+      "zOrder": 12,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "44646d85-8cd9-4ecb-8d63-bff255521390",
+      "width": 5324,
+      "x": 1236,
+      "y": 3047,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "ef719de2-d772-45fc-b5e9-84077727ae8e",
+      "width": 434,
+      "x": 3896,
+      "y": 5699,
+      "zOrder": 14,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "b1c9cbf1-8d37-4f8b-ab50-765169b1fc72",
+      "width": 4224,
+      "x": 93,
+      "y": -40,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "973f5cd9-3efa-457d-ad0d-f77bd35c1863",
+      "width": 0,
+      "x": 4063,
+      "y": 552,
+      "zOrder": 18,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "fb478103-fb3a-4f07-a067-f2661943a5eb",
+      "width": 365,
+      "x": 4140.5,
+      "y": 132.5,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "9f3e956e-a879-4512-99c4-8f74ecd21d5e",
+      "width": 1826,
+      "x": 4333,
+      "y": 740,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "1b3d0d5f-4aef-45ae-9bf2-43a23d3c5ff9",
+      "width": 1839,
+      "x": 4327,
+      "y": 305,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 270,
+      "customSize": true,
+      "height": 20,
+      "layer": "",
+      "locked": false,
+      "name": "Platform",
+      "persistentUuid": "20466320-1230-4f97-99c6-2b0b5e472816",
+      "width": 439,
+      "x": 5937.5,
+      "y": 530.5,
+      "zOrder": 2,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "EnemySpawnPoint",
+      "persistentUuid": "0617ab31-1924-4dfc-bfa6-2bf42942e998",
+      "width": 0,
+      "x": 5436,
+      "y": 481,
+      "zOrder": 19,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "TextShowPoint",
+      "persistentUuid": "22f5221d-4df5-4cce-bece-e7f24da34819",
+      "width": 0,
+      "x": 907,
+      "y": 270,
+      "zOrder": 20,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "TextShowPoint",
+      "persistentUuid": "42432e27-d2aa-4d91-a67e-29adf395f50e",
+      "width": 0,
+      "x": 1939,
+      "y": 266,
+      "zOrder": 21,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "TextShowPoint",
+      "persistentUuid": "b71312a3-c6ee-4c56-840e-0bec03db6d75",
+      "width": 0,
+      "x": 3233,
+      "y": 271,
+      "zOrder": 22,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "TextShowPoint",
+      "persistentUuid": "e6afcf12-5ace-4ff6-9ae2-b84cae0c6e4e",
+      "width": 0,
+      "x": 4562,
+      "y": 603,
+      "zOrder": 23,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "792058fd-1dca-4d22-a30b-505083428354",
+      "width": 7886,
+      "x": -777,
+      "y": -558,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Spikes",
+      "persistentUuid": "97ab65c7-da16-404c-82e2-f1153aaa5f94",
+      "width": 0,
+      "x": 2275,
+      "y": 362,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Spikes",
+      "persistentUuid": "a5bc7f1a-1f19-4aa5-b462-6555dc255315",
+      "width": 0,
+      "x": 2470,
+      "y": 363,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Spikes",
+      "persistentUuid": "9451645f-f683-4bfc-a49f-d63082b408ac",
+      "width": 0,
+      "x": 2671,
+      "y": 362,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "068cce50-10a8-4af7-af84-fc0d6e07b908",
+      "width": 7886,
+      "x": -939.1026000976562,
+      "y": -553.278564453125,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "f25bbb6c-4028-4ceb-a357-db10c56ad846",
+      "width": 7886,
+      "x": -957.8140869140625,
+      "y": -313.7257385253906,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "2f71f291-3326-4695-8cdc-7973f796be3b",
+      "width": 7886,
+      "x": -957.8140869140625,
+      "y": -313.7257385253906,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "5ef6af5c-5869-4626-a93a-7aa4cd822e91",
+      "width": 7886,
+      "x": -989.3797607421875,
+      "y": -761.9580688476562,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "685fe8a3-f205-4d94-8a14-d70632ca4157",
+      "width": 7886,
+      "x": -989.3797607421875,
+      "y": -761.9580688476562,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "66b1bed0-b46a-46ba-bc6e-7328045ea051",
+      "width": 7886,
+      "x": -989.3797607421875,
+      "y": -761.9580688476562,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "698f0f8f-0ae0-4d0b-af50-96b91d171350",
+      "width": 7886,
+      "x": -989.3797607421875,
+      "y": -761.9580688476562,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": true,
+      "height": 6622,
+      "layer": "",
+      "locked": false,
+      "name": "BlueBackground",
+      "persistentUuid": "faec1f17-31ef-4636-8d67-fb7ff590112e",
+      "width": 7886,
+      "x": -989.3797607421875,
+      "y": -761.9580688476562,
+      "zOrder": 0,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Spikes",
+      "persistentUuid": "ff427064-b111-46d3-bb70-c734c7818343",
+      "width": 0,
+      "x": 2754,
+      "y": 362,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Spikes",
+      "persistentUuid": "6185cbf9-be91-4c39-b12b-0ff18104f77b",
+      "width": 0,
+      "x": 2995,
+      "y": 363,
+      "zOrder": 27,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "SpawnPointA",
+      "persistentUuid": "dd7570eb-29e2-4893-b971-1e045ab25f57",
+      "width": 0,
+      "x": 290,
+      "y": 177,
+      "zOrder": 28,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "WeaponSpawnPoint",
+      "persistentUuid": "b5ee179c-f8c8-43ba-aae2-23ca24ae86c0",
+      "width": 0,
+      "x": 1080,
+      "y": 108,
+      "zOrder": 30,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "StickSword",
+      "persistentUuid": "9661fcc8-022b-416c-bcea-0b7bcee66550",
+      "width": 0,
+      "x": 5426,
+      "y": 569,
+      "zOrder": 31,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    }
+  ],
+  "objects": [
+    {
+      "name": "Platform",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior",
+          "canBeGrabbed": false,
+          "platformType": "NormalPlatform",
+          "yGrabOffset": 0
+        }
+      ],
+      "animations": [
+        {
+          "name": "Platform",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Platform-1-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "TextBubble",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "animations": [
+        {
+          "name": "TextBubble",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "TextBubble-1.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "bold": false,
+      "italic": false,
+      "name": "TutorialText",
+      "smoothed": true,
+      "tags": "",
+      "type": "TextObject::Text",
+      "underlined": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Tween",
+          "type": "Tween::TweenBehavior"
+        }
+      ],
+      "string": "Hello there! I'm Stix.\nYou can move me \nusing the left and \nright buttons.",
+      "font": "",
+      "characterSize": 20,
+      "color": {
+        "b": 0,
+        "g": 0,
+        "r": 0
+      }
+    },
+    {
+      "name": "TextShowPoint",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "IsShown",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": []
+    },
+    {
+      "name": "SpawnPointA",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": []
+            }
+          ]
+        },
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "EnemySpawnPoint",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": []
+    },
+    {
+      "name": "StopPoint",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": []
+    },
+    {
+      "name": "StickSword",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "IsPickedUp",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "IsSwinging",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "IsFiring",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "CanSwing",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "CanFire",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "IsBullet",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "WeaponType",
+          "type": "string",
+          "value": "SteelSword"
+        },
+        {
+          "name": "IsDropped",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "IsLocked",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "HandheldItem",
+          "type": "HandheldItem::HandheldItem",
+          "OnlyFollowPosition": false
+        },
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 1,
+          "masks": 1
+        },
+        {
+          "name": "Weapon",
+          "type": "StixExtensions::Weapon",
+          "Property": "HandheldItem",
+          "Behavior": "HandheldItem"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Sword",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Sword-2.png",
+                  "points": [
+                    {
+                      "name": "Tip",
+                      "x": 32.00367736816406,
+                      "y": 4.264705657958984
+                    }
+                  ],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": false,
+                    "name": "centre",
+                    "x": 32.00120162963867,
+                    "y": 72.59615325927734
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "height": 128,
+      "name": "BlueBackground",
+      "tags": "",
+      "texture": "tiled_Blue Background.png2",
+      "type": "TiledSpriteObject::TiledSprite",
+      "width": 128,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "name": "Spikes",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Spikes",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "metadata": "{\"pskl\":{\"data\":\"{\\\"modelVersion\\\":2,\\\"piskel\\\":{\\\"name\\\":\\\"New Animation\\\",\\\"description\\\":\\\"\\\",\\\"fps\\\":12,\\\"height\\\":35,\\\"width\\\":83,\\\"layers\\\":[\\\"{\\\\\\\"name\\\\\\\":\\\\\\\"Layer 1\\\\\\\",\\\\\\\"opacity\\\\\\\":1,\\\\\\\"frameCount\\\\\\\":1,\\\\\\\"chunks\\\\\\\":[{\\\\\\\"layout\\\\\\\":[[0]],\\\\\\\"base64PNG\\\\\\\":\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAjCAYAAADokDbBAAABKklEQVRoQ+2a7QrDMAhF1/d/6I1AAyJJvRoHFe9+DWpKcnb8aNn1wT5fEXZhS/pFIWAkyEkIWdeOJgJlwhyx8ns7WNaBCdMi5LhOmA5YVqgFUzceNqIHoihMGce6uQFKmFbuOq4/wdylNM0MmLmDxrqZCHPcinYugO7S3LKPMAMwLdhWA3OU7/qhUViWufXJBE4Qhcm6CaY5ah3rpgK6MhOFhEIPJEzNJScwmeqGmV7bUItrqubctTbTC8cb79xerfAsmOPU7WfOU5ismyJ5Vu8pvZYx1W+gGS99CfMPML1G1+ouwG6nmd6RSN+adooOfArjdD3wu78/RJsZHW8I8zbzNMXleNS6bmb+5aW9nYSZWIoJ8+Uw29bNaWa0i3PeVM/mo3EQZkK6/wAv90QkGvpG4AAAAABJRU5ErkJggg==\\\\\\\"}]}\\\",\\\"{\\\\\\\"name\\\\\\\":\\\\\\\"Layer 2\\\\\\\",\\\\\\\"opacity\\\\\\\":1,\\\\\\\"frameCount\\\\\\\":1,\\\\\\\"chunks\\\\\\\":[{\\\\\\\"layout\\\\\\\":[[0]],\\\\\\\"base64PNG\\\\\\\":\\\\\\\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFMAAAAjCAYAAADokDbBAAAB20lEQVRoQ+2YyY7CQAxEk///6EFhFGQa71v7EK40z+VyuRNxHvs+f6D0mSSjkilqFA8kNbliYNP3d1Et1UxRn3ig2Myr/m1CVAvkZDNVA4824PW6svGKAT1mHscRDct6dbC8aDFPMteHRMZDo5oJ+yQ922kmrB2947DfZzNF3mMmvVureePMpFZaFMrcJ11MUWN3MilBkXuziylqnGLmFTxx8kQ6ud9lM1lep5nSZD2NdzPHmUkNMGJmF5Md3o5kSo1f26zVJQ1ASi52c2iZPxq1oj0v59SfG1xNqZEJTFJjl5nahFjM3MUk63abKdXTGmR5+lcyv/qRmstYb0vjlrOeFEv9apnoOQmeYaYlGVozdzO3m6kdnCYdmjMwCJrzmjM3Ex2mtsFIQi0iYTK5V6RJzI+HE83UrLrVzArmj4ZqM61327pGmL4pzB8dXWZa63DJ86RSSmYK09qk9e6MisTuzYnMt4+VZnrXkVv1acwvPR1memtgCfSmUjOgsE4vQLPuoxsHDaTprDIzuo7Y++Z05lltZpQPUxNNELbqGczPkKPNUuueIXJ9nRnPfMz8j0PUh/ego5CuZMI6Uc3w7r25KcwohDMzi53x4Fl1ljCvhrFJaV59njOLAy+OGb8e/nnvDAAAAABJRU5ErkJggg==\\\\\\\"}]}\\\"],\\\"hiddenFrames\\\":[]}}\",\"paths\":[\"/home/cjsalamon/GDevelop projects/StixNet/Spikes-1-0.png\"],\"name\":\"Spikes\",\"singleFrame\":false}}",
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Spikes-1-0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Bullet",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "Shot",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "Shot-1-0.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "WeaponSpawnPoint",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [],
+      "effects": [],
+      "behaviors": [],
+      "animations": []
+    }
+  ],
+  "events": [
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Enemy Events"
+    },
+    {
+      "type": "BuiltinCommonInstructions::Link",
+      "include": {
+        "includeConfig": 0
+      },
+      "target": "Stix Events"
+    },
+    {
+      "type": "BuiltinCommonInstructions::ForEach",
+      "object": "StixCharacter",
+      "conditions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "ObjectVariableAsBoolean"
+          },
+          "parameters": [
+            "StixCharacter",
+            "IsDead",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "LinkedObjects::PickObjectsLinkedTo"
+          },
+          "parameters": [
+            "",
+            "StixCharacterHitBox",
+            "StixCharacter",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "StixExtensions::Character::IsPlayer"
+          },
+          "parameters": [
+            "StixCharacter",
+            "Character",
+            ""
+          ],
+          "subInstructions": []
+        }
+      ],
+      "actions": [],
+      "events": [
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "TextShowPoint",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "PosX"
+              },
+              "parameters": [
+                "StixCharacterHitBox",
+                ">",
+                "TextShowPoint.X()"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextShowPoint",
+                "IsShown",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::TextBubble"
+              },
+              "parameters": [
+                "",
+                "StixCharacter",
+                "TextBubble",
+                "Tween",
+                "TutorialText",
+                "Tween",
+                "VariableString(TutorialText[Variable(TextIndex)])",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "ModVarScene"
+              },
+              "parameters": [
+                "TextIndex",
+                "+",
+                "1"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "TextShowPoint",
+                "IsShown",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "TextBubble",
+                "StixCharacter",
+                ""
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "TutorialText",
+                "StixCharacter",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::UpdateBubble"
+              },
+              "parameters": [
+                "",
+                "TextBubble",
+                "TutorialText",
+                "StixCharacter",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        }
+      ]
+    },
+    {
+      "type": "BuiltinCommonInstructions::Standard",
+      "conditions": [],
+      "actions": [
+        {
+          "type": {
+            "inverted": false,
+            "value": "StixExtensions::SpawnItem"
+          },
+          "parameters": [
+            "",
+            "StickSword",
+            "Physics2",
+            "WeaponSpawnPoint",
+            ""
+          ],
+          "subInstructions": []
+        },
+        {
+          "type": {
+            "inverted": false,
+            "value": "ChangePlan"
+          },
+          "parameters": [
+            "StickSword",
+            "=",
+            "StixCharacter.ZOrder() + 1"
+          ],
+          "subInstructions": []
+        }
+      ],
+      "events": []
+    }
+  ],
+  "layers": [
+    {
+      "ambientLightColorB": 1,
+      "ambientLightColorG": 134217728,
+      "ambientLightColorR": 1597132097,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "",
+      "visibility": true,
+      "cameras": [
+        {
+          "defaultSize": true,
+          "defaultViewport": true,
+          "height": 0,
+          "viewportBottom": 1,
+          "viewportLeft": 0,
+          "viewportRight": 1,
+          "viewportTop": 0,
+          "width": 0
+        }
+      ],
+      "effects": []
+    },
+    {
+      "ambientLightColorB": -2147483616,
+      "ambientLightColorG": 6033120,
+      "ambientLightColorR": 13136984,
+      "followBaseLayerCamera": false,
+      "isLightingLayer": false,
+      "name": "Layer",
+      "visibility": true,
+      "cameras": [],
+      "effects": []
+    }
+  ],
+  "behaviorsSharedData": [
+    {
+      "name": "CanBeDamaged",
+      "type": "StixExtensions::CanBeDamaged"
+    },
+    {
+      "name": "Character",
+      "type": "StixExtensions::Character"
+    },
+    {
+      "name": "HandheldItem",
+      "type": "HandheldItem::HandheldItem"
+    },
+    {
+      "name": "Physics2",
+      "type": "Physics2::Physics2Behavior",
+      "gravityX": 0,
+      "gravityY": 9.8,
+      "scaleX": 100,
+      "scaleY": 100
+    },
+    {
+      "name": "Platform",
+      "type": "PlatformBehavior::PlatformBehavior"
+    },
+    {
+      "name": "PlatformerObject",
+      "type": "PlatformBehavior::PlatformerObjectBehavior"
+    },
+    {
+      "name": "Sticker",
+      "type": "Sticker::Sticker"
+    },
+    {
+      "name": "Tween",
+      "type": "Tween::TweenBehavior"
+    },
+    {
+      "name": "Weapon",
+      "type": "StixExtensions::Weapon"
+    }
+  ]
+}
