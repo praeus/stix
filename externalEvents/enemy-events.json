@@ -12,7 +12,7 @@
             "value": "CollisionNP"
           },
           "parameters": [
-            "SwingBox",
+            "AttackBox",
             "StixCharacter",
             "",
             "",
@@ -28,7 +28,7 @@
             "value": "SetObjectVariableAsBoolean"
           },
           "parameters": [
-            "SwingBox",
+            "AttackBox",
             "IsColliding",
             "True"
           ],
@@ -39,7 +39,7 @@
     },
     {
       "type": "BuiltinCommonInstructions::ForEach",
-      "object": "SwingBox",
+      "object": "AttackBox",
       "conditions": [
         {
           "type": {
@@ -47,7 +47,7 @@
             "value": "ObjectVariableAsBoolean"
           },
           "parameters": [
-            "SwingBox",
+            "AttackBox",
             "IsColliding",
             "True"
           ],
@@ -61,7 +61,7 @@
             "value": "SetObjectVariableAsBoolean"
           },
           "parameters": [
-            "SwingBox",
+            "AttackBox",
             "IsColliding",
             "False"
           ],
@@ -80,7 +80,7 @@
               "parameters": [
                 "",
                 "StixCharacter",
-                "SwingBox",
+                "AttackBox",
                 ""
               ],
               "subInstructions": []
@@ -127,160 +127,14 @@
             {
               "type": {
                 "inverted": false,
-                "value": "StixExtensions::TryUseWeapon"
+                "value": "StixExtensions::Weapon::UseWeapon"
               },
               "parameters": [
-                "",
                 "Weapons",
-                "HandheldItem",
                 "Weapon",
                 "StixCharacter",
                 "Character",
-                "SwingBox",
                 "Bullet",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
-        }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "ChargeBox",
-            "StixCharacterHitBox",
-            "",
-            "",
-            ""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "SetObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "ChargeBox",
-            "IsColliding",
-            "True"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "events": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::ForEach",
-      "object": "SwingBox",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "ObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "SwingBox",
-            "IsColliding",
-            "True"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "SetObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "SwingBox",
-            "IsColliding",
-            "False"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
-              },
-              "parameters": [
-                "",
-                "StixCharacter",
-                "SwingBox",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "StixCharacter",
-                "IsEnemyNPC",
-                "True"
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "ObjectVariableAsBoolean"
-              },
-              "parameters": [
-                "StixCharacter",
-                "IsDead",
-                "False"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
-              },
-              "parameters": [
-                "",
-                "Weapons",
-                "StixCharacter",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "StixExtensions::TryUseWeapon"
-              },
-              "parameters": [
-                "",
-                "Weapons",
-                "HandheldItem",
-                "Weapon",
-                "StixCharacter",
-                "Character",
-                "SwingBox",
                 "Bullet",
                 ""
               ],
@@ -295,19 +149,6 @@
       "type": "BuiltinCommonInstructions::ForEach",
       "object": "StixCharacter",
       "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "LinkedObjects::PickObjectsLinkedTo"
-          },
-          "parameters": [
-            "",
-            "StixCharacterHitBox",
-            "StixCharacter",
-            ""
-          ],
-          "subInstructions": []
-        },
         {
           "type": {
             "inverted": false,
@@ -355,7 +196,7 @@
           "parameters": [
             "",
             "EnemySpawnPoint",
-            "StixCharacterHitBox",
+            "StixCharacter",
             "PlatformerObject",
             "250",
             ""
@@ -363,178 +204,22 @@
           "subInstructions": []
         }
       ],
-      "events": [
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
-              },
-              "parameters": [
-                "",
-                "ChargeBox",
-                "StixCharacter",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [],
-          "events": [
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "StixCharacter",
-                    "IsFacingLeft",
-                    "True"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "ChargeBox",
-                    "=",
-                    "StixCharacter.CenterX() - 600",
-                    "=",
-                    "StixCharacter.Y()"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ObjectVariableAsBoolean"
-                  },
-                  "parameters": [
-                    "StixCharacter",
-                    "IsFacingLeft",
-                    "False"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "MettreXY"
-                  },
-                  "parameters": [
-                    "ChargeBox",
-                    "=",
-                    "StixCharacter.CenterX() + 150",
-                    "=",
-                    "StixCharacter.Y()"
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            },
-            {
-              "type": "BuiltinCommonInstructions::Standard",
-              "conditions": [],
-              "actions": [
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "StixExtensions::Charge"
-                  },
-                  "parameters": [
-                    "",
-                    "StixCharacter",
-                    "StixCharacterHitBox",
-                    "PlatformerObject",
-                    "ChargeBox",
-                    "StixCharacterHitBox",
-                    "300",
-                    ""
-                  ],
-                  "subInstructions": []
-                }
-              ],
-              "events": []
-            }
-          ]
-        }
-      ]
+      "events": []
     },
     {
       "colorB": 228,
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "folded": true,
-      "name": "Flying Beast Events",
+      "name": "Drone Events",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "type": "BuiltinCommonInstructions::ForEach",
-          "object": "FlyingBeasts",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
-              },
-              "parameters": [
-                "",
-                "BeastHitBoxA",
-                "FlyingBeasts",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
-              },
-              "parameters": [
-                "",
-                "BeastSpawnPointA",
-                "FlyingBeasts",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
+          "object": "Drones",
+          "conditions": [],
           "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "SetCenter"
-              },
-              "parameters": [
-                "BeastHitBoxA",
-                "=",
-                "FlyingBeasts.CenterX()",
-                "=",
-                "FlyingBeasts.CenterY()"
-              ],
-              "subInstructions": []
-            },
             {
               "type": {
                 "inverted": false,
@@ -542,9 +227,9 @@
               },
               "parameters": [
                 "",
-                "FlyingBeasts",
+                "Drones",
                 "Vulnerable",
-                "BeastSpawnPointA",
+                "DroneSpawnPoint",
                 "Blood",
                 "FlyingBeasts",
                 ""
@@ -559,10 +244,40 @@
                 {
                   "type": {
                     "inverted": false,
+                    "value": "DepartScene"
+                  },
+                  "parameters": [
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ActivateBehavior"
+                  },
+                  "parameters": [
+                    "Drones",
+                    "Physics2",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "FlyingBeasts",
+                    "Drones",
                     "IsDead",
                     "False"
                   ],
@@ -580,8 +295,8 @@
                         "value": "CollisionNP"
                       },
                       "parameters": [
-                        "StixCharacterHitBox",
-                        "BeastHitBoxA",
+                        "StixCharacter",
+                        "Drones",
                         "",
                         "",
                         ""
@@ -594,19 +309,6 @@
                         "value": "BuiltinCommonInstructions::Once"
                       },
                       "parameters": [],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "LinkedObjects::PickObjectsLinkedTo"
-                      },
-                      "parameters": [
-                        "",
-                        "StixCharacter",
-                        "StixCharacterHitBox",
-                        ""
-                      ],
                       "subInstructions": []
                     },
                     {
@@ -665,12 +367,10 @@
                           "parameters": [
                             "StixCharacter",
                             "CanBeDamaged",
-                            "StixCharacterHitBox",
-                            "PlatformerObject",
-                            "BeastHitBoxA",
+                            "Drones",
                             "Blood",
                             "Sticker",
-                            ""
+                            "Blood"
                           ],
                           "subInstructions": []
                         }
@@ -680,39 +380,19 @@
                   ]
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
                       "type": {
                         "inverted": false,
-                        "value": "StixExtensions::Weapon::IsHitNPC"
+                        "value": "StixExtensions::IsHitting"
                       },
                       "parameters": [
                         "Weapons",
-                        "Weapon",
-                        "FlyingBeasts",
-                        "BeastHitBoxA",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "BuiltinCommonInstructions::Once"
-                      },
-                      "parameters": [],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ObjectVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "FlyingBeasts",
-                        "IsHit",
-                        "False"
+                        "Damage",
+                        "Drones",
+                        "BeastHitBoxA"
                       ],
                       "subInstructions": []
                     }
@@ -724,7 +404,7 @@
                         "value": "StixExtensions::Vulnerable::Damage"
                       },
                       "parameters": [
-                        "FlyingBeasts",
+                        "Drones",
                         "Vulnerable",
                         "25",
                         ""
@@ -742,7 +422,7 @@
                             "value": "VarObjet"
                           },
                           "parameters": [
-                            "FlyingBeasts",
+                            "Drones",
                             "Health",
                             ">",
                             "0"
@@ -757,13 +437,12 @@
                             "value": "StixExtensions::Vulnerable::PushBack"
                           },
                           "parameters": [
-                            "FlyingBeasts",
+                            "Drones",
                             "Vulnerable",
-                            "Weapons",
-                            "Blood",
+                            "Damage",
+                            "Sparks",
                             "Sticker",
-                            "FlyingBeasts",
-                            ""
+                            "FlyingBeasts"
                           ],
                           "subInstructions": []
                         }
@@ -778,34 +457,13 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "CollisionNP"
+                        "value": "VarObjet"
                       },
                       "parameters": [
-                        "Bullet",
-                        "BeastHitBoxA",
-                        "",
-                        "",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "BuiltinCommonInstructions::Once"
-                      },
-                      "parameters": [],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ObjectVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "FlyingBeasts",
-                        "IsHit",
-                        "False"
+                        "Drones",
+                        "Health",
+                        "<=",
+                        "0"
                       ],
                       "subInstructions": []
                     }
@@ -814,69 +472,25 @@
                     {
                       "type": {
                         "inverted": false,
-                        "value": "StixExtensions::Vulnerable::Damage"
+                        "value": "StixExtensions::Vulnerable::Kill"
                       },
                       "parameters": [
-                        "FlyingBeasts",
+                        "Drones",
                         "Vulnerable",
-                        "25",
-                        ""
-                      ],
-                      "subInstructions": []
-                    },
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "Delete"
-                      },
-                      "parameters": [
-                        "Bullet",
+                        "Physics2",
+                        "BasicFlame",
+                        "Sticker",
+                        "BasicFlame",
+                        "DroneSpawnPoint",
                         ""
                       ],
                       "subInstructions": []
                     }
                   ],
-                  "events": [
-                    {
-                      "type": "BuiltinCommonInstructions::Standard",
-                      "conditions": [
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "VarObjet"
-                          },
-                          "parameters": [
-                            "FlyingBeasts",
-                            "Health",
-                            ">",
-                            "0"
-                          ],
-                          "subInstructions": []
-                        }
-                      ],
-                      "actions": [
-                        {
-                          "type": {
-                            "inverted": false,
-                            "value": "StixExtensions::Vulnerable::PushBack"
-                          },
-                          "parameters": [
-                            "FlyingBeasts",
-                            "Vulnerable",
-                            "Bullet",
-                            "Blood",
-                            "Sticker",
-                            "FlyingBeasts",
-                            ""
-                          ],
-                          "subInstructions": []
-                        }
-                      ],
-                      "events": []
-                    }
-                  ]
+                  "events": []
                 },
                 {
+                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -885,7 +499,7 @@
                         "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
-                        "FlyingBeasts",
+                        "Drones",
                         "IsPatrolling",
                         "False"
                       ],
@@ -913,7 +527,7 @@
                                 "value": "SetObjectVariableAsBoolean"
                               },
                               "parameters": [
-                                "FlyingBeasts",
+                                "Drones",
                                 "HasTarget",
                                 ""
                               ],
@@ -932,7 +546,7 @@
                                 "value": "ObjectVariableAsBoolean"
                               },
                               "parameters": [
-                                "FlyingBeasts",
+                                "Drones",
                                 "HasTarget",
                                 ""
                               ],
@@ -951,7 +565,7 @@
                                   },
                                   "parameters": [
                                     "StixCharacter",
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "1000",
                                     ""
                                   ],
@@ -963,8 +577,8 @@
                                     "value": "Distance"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
-                                    "BeastSpawnPointA",
+                                    "Drones",
+                                    "DroneSpawnPoint",
                                     "3000",
                                     ""
                                   ],
@@ -978,7 +592,7 @@
                                     "value": "SetObjectVariableAsBoolean"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "HasTarget",
                                     "True"
                                   ],
@@ -991,7 +605,7 @@
                                   },
                                   "parameters": [
                                     "",
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "StixCharacter",
                                     ""
                                   ],
@@ -1003,7 +617,7 @@
                                     "value": "SetObjectVariableAsBoolean"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "IsActive",
                                     "True"
                                   ],
@@ -1023,7 +637,7 @@
                                 "value": "ObjectVariableAsBoolean"
                               },
                               "parameters": [
-                                "FlyingBeasts",
+                                "Drones",
                                 "HasTarget",
                                 "False"
                               ],
@@ -1041,7 +655,7 @@
                                     "value": "ObjectVariableAsBoolean"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "IsActive",
                                     "True"
                                   ],
@@ -1055,7 +669,7 @@
                                     "value": "SetObjectVariableAsBoolean"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "IsActive",
                                     ""
                                   ],
@@ -1067,7 +681,7 @@
                                     "value": "Arreter"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts"
+                                    "Drones"
                                   ],
                                   "subInstructions": []
                                 }
@@ -1117,7 +731,7 @@
                                         "value": "SetObjectVariableAsBoolean"
                                       },
                                       "parameters": [
-                                        "FlyingBeasts",
+                                        "Drones",
                                         "IsOutOfBounds",
                                         "True"
                                       ],
@@ -1137,40 +751,7 @@
                                     "value": "ObjectVariableAsBoolean"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
-                                    "IsOutOfBounds",
-                                    "False"
-                                  ],
-                                  "subInstructions": []
-                                }
-                              ],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "StixExtensions::ForcePatrol"
-                                  },
-                                  "parameters": [
-                                    "",
-                                    "BeastSpawnPointA",
-                                    "FlyingBeasts",
-                                    ""
-                                  ],
-                                  "subInstructions": []
-                                }
-                              ],
-                              "events": []
-                            },
-                            {
-                              "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "ObjectVariableAsBoolean"
-                                  },
-                                  "parameters": [
-                                    "FlyingBeasts",
+                                    "Drones",
                                     "IsOutOfBounds",
                                     "True"
                                   ],
@@ -1184,8 +765,8 @@
                                     "value": "AddForceVers"
                                   },
                                   "parameters": [
-                                    "FlyingBeasts",
-                                    "BeastSpawnPointA",
+                                    "Drones",
+                                    "DroneSpawnPoint",
                                     "50",
                                     ""
                                   ],
@@ -1237,7 +818,7 @@
                                         "value": "SetObjectVariableAsBoolean"
                                       },
                                       "parameters": [
-                                        "FlyingBeasts",
+                                        "Drones",
                                         "IsOutOfBounds",
                                         "False"
                                       ],
@@ -1254,43 +835,46 @@
                       "parameters": []
                     }
                   ]
-                },
-                {
-                  "type": "BuiltinCommonInstructions::Standard",
-                  "conditions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "ObjectVariableAsBoolean"
-                      },
-                      "parameters": [
-                        "FlyingBeasts",
-                        "IsPatrolling",
-                        "True"
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "type": {
-                        "inverted": false,
-                        "value": "StixExtensions::ForcePatrol"
-                      },
-                      "parameters": [
-                        "",
-                        "BeastSpawnPointA",
-                        "FlyingBeasts",
-                        ""
-                      ],
-                      "subInstructions": []
-                    }
-                  ],
-                  "events": []
                 }
               ]
             }
           ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::Standard",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "VarObjet"
+              },
+              "parameters": [
+                "Drones",
+                "Health",
+                "<=",
+                "0"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "StixExtensions::Vulnerable::Respawn"
+              },
+              "parameters": [
+                "Drones",
+                "Vulnerable",
+                "Physics2",
+                "DroneSpawnPoint",
+                "BasicExplosion",
+                ""
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -1306,13 +890,13 @@
       "colorG": 176,
       "colorR": 74,
       "creationTime": 0,
-      "name": "Ground Beast Events ",
+      "name": "Sentry Events ",
       "source": "",
       "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "type": "BuiltinCommonInstructions::ForEach",
-          "object": "GroundBeasts",
+          "object": "Sentries",
           "conditions": [
             {
               "type": {
@@ -1322,7 +906,7 @@
               "parameters": [
                 "",
                 "BeastHitBoxB",
-                "GroundBeasts",
+                "Sentries",
                 ""
               ],
               "subInstructions": []
@@ -1334,8 +918,8 @@
               },
               "parameters": [
                 "",
-                "BeastSpawnPointB",
-                "GroundBeasts",
+                "SentrySpawnPoint",
+                "Sentries",
                 ""
               ],
               "subInstructions": []
@@ -1348,7 +932,7 @@
                 "value": "SetCenter"
               },
               "parameters": [
-                "GroundBeasts",
+                "Sentries",
                 "=",
                 "BeastHitBoxB.CenterX()",
                 "=",
@@ -1363,9 +947,9 @@
               },
               "parameters": [
                 "",
-                "GroundBeasts",
+                "Sentries",
                 "Vulnerable",
-                "BeastSpawnPointB",
+                "SentrySpawnPoint",
                 "Blood",
                 "BeastHitBoxB",
                 ""
@@ -1385,7 +969,7 @@
                   "parameters": [
                     "",
                     "ChargeBox",
-                    "GroundBeasts",
+                    "Sentries",
                     ""
                   ],
                   "subInstructions": []
@@ -1402,7 +986,7 @@
                         "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
-                        "GroundBeasts",
+                        "Sentries",
                         "IsFacingLeft",
                         "True"
                       ],
@@ -1418,9 +1002,9 @@
                       "parameters": [
                         "ChargeBox",
                         "=",
-                        "GroundBeasts.CenterX() - 600",
+                        "Sentries.CenterX() - 600",
                         "=",
-                        "GroundBeasts.Y()"
+                        "Sentries.Y()"
                       ],
                       "subInstructions": []
                     }
@@ -1436,7 +1020,7 @@
                         "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
-                        "GroundBeasts",
+                        "Sentries",
                         "IsFacingLeft",
                         "False"
                       ],
@@ -1452,9 +1036,9 @@
                       "parameters": [
                         "ChargeBox",
                         "=",
-                        "GroundBeasts.CenterX() + 250",
+                        "Sentries.CenterX() + 250",
                         "=",
-                        "GroundBeasts.Y()"
+                        "Sentries.Y()"
                       ],
                       "subInstructions": []
                     }
@@ -1472,7 +1056,7 @@
                       },
                       "parameters": [
                         "",
-                        "GroundBeasts",
+                        "Sentries",
                         "BeastHitBoxB",
                         "PlatformerObject",
                         "ChargeBox",
@@ -1510,7 +1094,7 @@
                     "value": "FlipX"
                   },
                   "parameters": [
-                    "GroundBeasts",
+                    "Sentries",
                     "no"
                   ],
                   "subInstructions": []
@@ -1521,7 +1105,7 @@
                     "value": "SetObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "GroundBeasts",
+                    "Sentries",
                     "IsFacingLeft",
                     "True"
                   ],
@@ -1553,7 +1137,7 @@
                     "value": "FlipX"
                   },
                   "parameters": [
-                    "GroundBeasts",
+                    "Sentries",
                     "yes"
                   ],
                   "subInstructions": []
@@ -1564,7 +1148,7 @@
                     "value": "SetObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "GroundBeasts",
+                    "Sentries",
                     "IsFacingLeft",
                     "False"
                   ],
@@ -1582,7 +1166,7 @@
                     "value": "ObjectVariableAsBoolean"
                   },
                   "parameters": [
-                    "GroundBeasts",
+                    "Sentries",
                     "IsDead",
                     "False"
                   ],
@@ -1597,7 +1181,7 @@
                   },
                   "parameters": [
                     "",
-                    "BeastSpawnPointB",
+                    "SentrySpawnPoint",
                     "BeastHitBoxB",
                     "PlatformerObject",
                     "300",
@@ -1718,7 +1302,7 @@
                       "parameters": [
                         "Weapons",
                         "Weapon",
-                        "GroundBeasts",
+                        "Sentries",
                         "BeastHitBoxB",
                         ""
                       ],
@@ -1738,7 +1322,7 @@
                         "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
-                        "GroundBeasts",
+                        "Sentries",
                         "IsHit",
                         "False"
                       ],
@@ -1752,7 +1336,7 @@
                         "value": "StixExtensions::Vulnerable::Damage"
                       },
                       "parameters": [
-                        "GroundBeasts",
+                        "Sentries",
                         "Vulnerable",
                         "10",
                         ""
@@ -1770,7 +1354,7 @@
                             "value": "VarObjet"
                           },
                           "parameters": [
-                            "GroundBeasts",
+                            "Sentries",
                             "Health",
                             ">",
                             "0"
@@ -1785,7 +1369,7 @@
                             "value": "StixExtensions::Vulnerable::PushBack"
                           },
                           "parameters": [
-                            "GroundBeasts",
+                            "Sentries",
                             "Vulnerable",
                             "Weapons",
                             "Blood",
@@ -1831,7 +1415,7 @@
                         "value": "ObjectVariableAsBoolean"
                       },
                       "parameters": [
-                        "GroundBeasts",
+                        "Sentries",
                         "IsHit",
                         "False"
                       ],
@@ -1845,7 +1429,7 @@
                         "value": "StixExtensions::Vulnerable::Damage"
                       },
                       "parameters": [
-                        "GroundBeasts",
+                        "Sentries",
                         "Vulnerable",
                         "10",
                         ""
@@ -1874,7 +1458,7 @@
                             "value": "VarObjet"
                           },
                           "parameters": [
-                            "GroundBeasts",
+                            "Sentries",
                             "Health",
                             ">",
                             "0"
@@ -1889,7 +1473,7 @@
                             "value": "StixExtensions::Vulnerable::PushBack"
                           },
                           "parameters": [
-                            "GroundBeasts",
+                            "Sentries",
                             "Vulnerable",
                             "Bullet",
                             "Blood",

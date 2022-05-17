@@ -26,18 +26,15 @@
   },
   "objectsGroups": [
     {
-      "name": "FlyingBeasts",
+      "name": "Drones",
       "objects": [
         {
-          "name": "Raven"
-        },
-        {
-          "name": "Bat"
+          "name": "Drone"
         }
       ]
     },
     {
-      "name": "GroundBeasts",
+      "name": "Sentries",
       "objects": [
         {
           "name": "Bear"
@@ -64,27 +61,19 @@
       ]
     },
     {
-      "name": "Deletion",
+      "name": "Damage",
       "objects": [
-        {
-          "name": "Axe"
-        },
-        {
-          "name": "HuntingRifle"
-        },
-        {
-          "name": "StixHead"
-        },
-        {
-          "name": "StixSticks"
-        },
         {
           "name": "Bullet"
         },
         {
-          "name": "Key"
+          "name": "Axe"
         }
       ]
+    },
+    {
+      "name": "Enemies",
+      "objects": []
     }
   ],
   "variables": [
@@ -289,6 +278,11 @@
     },
     {
       "name": "IsRifleUnlocked",
+      "type": "boolean",
+      "value": false
+    },
+    {
+      "name": "ZoomOut",
       "type": "boolean",
       "value": false
     }
@@ -2732,7 +2726,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "persistentUuid": "17d1a593-a0ca-4308-bf80-0af0f1104873",
       "width": 0,
       "x": 1921,
@@ -3692,7 +3686,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointB",
+      "name": "SentrySpawnPoint",
       "persistentUuid": "e76368b1-de76-4151-a27d-2a2139603617",
       "width": 0,
       "x": 3020,
@@ -3708,7 +3702,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointB",
+      "name": "SentrySpawnPoint",
       "persistentUuid": "ca48d552-f7af-4122-ba06-a4ab49682bd0",
       "width": 0,
       "x": 6661,
@@ -3724,7 +3718,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointB",
+      "name": "SentrySpawnPoint",
       "persistentUuid": "0eb0e4c2-dd52-4b95-9180-fcf79c731443",
       "width": 0,
       "x": 9051,
@@ -4044,7 +4038,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "persistentUuid": "c1ef4abe-f906-455b-9867-60ee69fa9903",
       "width": 0,
       "x": 4434,
@@ -4060,7 +4054,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "persistentUuid": "e888f4c4-98f0-41d9-8fff-f4ad64200d4f",
       "width": 0,
       "x": 6976,
@@ -4076,7 +4070,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "persistentUuid": "81d89a60-2ea9-4c5a-8e85-3c6d5a98d128",
       "width": 0,
       "x": 3824,
@@ -4124,7 +4118,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "persistentUuid": "8a1fb52b-b39b-4043-b6aa-98b4ddc95e98",
       "width": 0,
       "x": 7032,
@@ -4140,7 +4134,7 @@
       "height": 0,
       "layer": "",
       "locked": false,
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "persistentUuid": "e4fb7630-7a9b-4d4c-b002-0398b0bf038c",
       "width": 0,
       "x": 894,
@@ -4389,6 +4383,38 @@
       "numberProperties": [],
       "stringProperties": [],
       "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "HuntingRifle",
+      "persistentUuid": "6dcaa127-ecf3-4b1b-8016-6024ddca9a2b",
+      "width": 0,
+      "x": 396,
+      "y": 355,
+      "zOrder": 150,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
+    },
+    {
+      "angle": 0,
+      "customSize": false,
+      "height": 0,
+      "layer": "",
+      "locked": false,
+      "name": "Key",
+      "persistentUuid": "b61782b6-6d52-4737-8eb6-0ec6467ee3a1",
+      "width": 0,
+      "x": 806,
+      "y": 503,
+      "zOrder": 151,
+      "numberProperties": [],
+      "stringProperties": [],
+      "initialVariables": []
     }
   ],
   "objects": [
@@ -4408,6 +4434,62 @@
           "canBeGrabbed": false,
           "platformType": "NormalPlatform",
           "yGrabOffset": 0
+        }
+      ]
+    },
+    {
+      "name": "AttackBox",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "IsSwinging",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Damage",
+          "type": "number",
+          "value": 10
+        },
+        {
+          "name": "IsColliding",
+          "type": "boolean",
+          "value": false
+        }
+      ],
+      "effects": [],
+      "behaviors": [],
+      "animations": [
+        {
+          "name": "",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": false,
+              "timeBetweenFrames": 0.08,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": false,
+                  "image": "NewSprite-1-16.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": []
+                }
+              ]
+            }
+          ]
         }
       ]
     },
@@ -4588,17 +4670,7 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "IsPickedUp",
-          "type": "boolean",
-          "value": false
-        },
-        {
           "name": "IsDisabled",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "IsDropped",
           "type": "boolean",
           "value": false
         }
@@ -4606,8 +4678,11 @@
       "effects": [],
       "behaviors": [
         {
-          "name": "HandheldItem",
-          "type": "HandheldItem::HandheldItem"
+          "name": "Platform",
+          "type": "PlatformBehavior::PlatformBehavior",
+          "canBeGrabbed": false,
+          "platformType": "NormalPlatform",
+          "yGrabOffset": 0
         }
       ],
       "animations": [
@@ -4620,7 +4695,7 @@
               "timeBetweenFrames": 0.02500000037252903,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_Off.png",
                   "points": [],
                   "originPoint": {
@@ -4634,7 +4709,26 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 }
               ]
             }
@@ -4649,7 +4743,7 @@
               "timeBetweenFrames": 0.125,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_1.png",
                   "points": [],
                   "originPoint": {
@@ -4663,10 +4757,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_2.png",
                   "points": [],
                   "originPoint": {
@@ -4680,10 +4793,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_3.png",
                   "points": [],
                   "originPoint": {
@@ -4697,10 +4829,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_4.png",
                   "points": [],
                   "originPoint": {
@@ -4714,10 +4865,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_5.png",
                   "points": [],
                   "originPoint": {
@@ -4731,10 +4901,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_6.png",
                   "points": [],
                   "originPoint": {
@@ -4748,10 +4937,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_7.png",
                   "points": [],
                   "originPoint": {
@@ -4765,10 +4973,29 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 },
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "Saw_On_8.png",
                   "points": [],
                   "originPoint": {
@@ -4782,7 +5009,26 @@
                     "x": 0,
                     "y": 0
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 8,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 8
+                      },
+                      {
+                        "x": 30,
+                        "y": 30
+                      },
+                      {
+                        "x": 8,
+                        "y": 30
+                      }
+                    ]
+                  ]
                 }
               ]
             }
@@ -4858,6 +5104,56 @@
               ]
             }
           ]
+        }
+      ]
+    },
+    {
+      "additive": true,
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 1,
+      "emitterForceMax": 150,
+      "emitterForceMin": 100,
+      "flow": 100,
+      "maxParticleNb": 300,
+      "name": "BasicFlame",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 35,
+      "particleBlue2": 0,
+      "particleGravityX": 0,
+      "particleGravityY": 0,
+      "particleGreen1": 166,
+      "particleGreen2": 0,
+      "particleLifeTimeMax": 1,
+      "particleLifeTimeMin": 0.20000000298023224,
+      "particleRed1": 245,
+      "particleRed2": 255,
+      "particleSize1": 30,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 25,
+      "rendererParam2": 1,
+      "rendererType": "Point",
+      "tags": "",
+      "tank": 50,
+      "textureParticleName": "",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 3,
+      "variables": [],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Sticker",
+          "type": "Sticker::Sticker",
+          "OnlyFollowPosition": false
         }
       ]
     },
@@ -5218,61 +5514,52 @@
       ]
     },
     {
-      "name": "SawHitBox",
+      "additive": true,
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 360,
+      "emitterForceMax": 300,
+      "emitterForceMin": 100,
+      "flow": 60,
+      "maxParticleNb": 300,
+      "name": "Sparks",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 14,
+      "particleBlue2": 0,
+      "particleGravityX": 0,
+      "particleGravityY": 600,
+      "particleGreen1": 215,
+      "particleGreen2": 0,
+      "particleLifeTimeMax": 2,
+      "particleLifeTimeMin": 1,
+      "particleRed1": 255,
+      "particleRed2": 122,
+      "particleSize1": 100,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 6,
+      "rendererParam2": 2,
+      "rendererType": "Line",
       "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "IsDisabled",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "IsPickedUp",
-          "type": "boolean",
-          "value": false
-        }
-      ],
+      "tank": 35,
+      "textureParticleName": "",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 5,
+      "variables": [],
       "effects": [],
       "behaviors": [
         {
-          "name": "Platform",
-          "type": "PlatformBehavior::PlatformBehavior",
-          "canBeGrabbed": false,
-          "platformType": "NormalPlatform",
-          "yGrabOffset": 0
-        }
-      ],
-      "animations": [
-        {
-          "name": "NewSprite",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.07999999821186066,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-12.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
+          "name": "Sticker",
+          "type": "Sticker::Sticker",
+          "OnlyFollowPosition": false
         }
       ]
     },
@@ -5508,6 +5795,26 @@
       ],
       "effects": [],
       "behaviors": [
+        {
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "acceleration": 1500,
+          "canGoDownFromJumpthru": false,
+          "canGrabPlatforms": false,
+          "canGrabWithoutMoving": false,
+          "deceleration": 1500,
+          "gravity": 1000,
+          "ignoreDefaultControls": true,
+          "jumpSpeed": 600,
+          "jumpSustainTime": 0.2,
+          "ladderClimbingSpeed": 150,
+          "maxFallingSpeed": 700,
+          "maxSpeed": 250,
+          "slopeMaxAngle": 60,
+          "useLegacyTrajectory": false,
+          "xGrabTolerance": 10,
+          "yGrabOffset": 0
+        },
         {
           "name": "Vulnerable",
           "type": "StixExtensions::Vulnerable"
@@ -6247,7 +6554,7 @@
       ]
     },
     {
-      "name": "BeastSpawnPointB",
+      "name": "SentrySpawnPoint",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -6257,7 +6564,7 @@
       "animations": []
     },
     {
-      "name": "BeastSpawnPointA",
+      "name": "DroneSpawnPoint",
       "tags": "",
       "type": "Sprite",
       "updateIfNotVisible": false,
@@ -6458,8 +6765,24 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
+        {
+          "name": "Falling",
+          "type": "StixExtensions::Falling",
+          "PhysicsBehavior": "Physics2"
+        },
+        {
           "name": "HandheldItem",
           "type": "HandheldItem::HandheldItem"
+        },
+        {
+          "name": "Item",
+          "type": "StixExtensions::Item",
+          "HandheldBehavior": "HandheldItem",
+          "AutoDeleteBehavior": "AutoDelete"
         },
         {
           "name": "Physics2",
@@ -7240,9 +7563,18 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
+        {
+          "name": "Falling",
+          "type": "StixExtensions::Falling",
+          "PhysicsBehavior": "Physics2"
+        },
+        {
           "name": "HandheldItem",
-          "type": "HandheldItem::HandheldItem",
-          "OnlyFollowPosition": false
+          "type": "HandheldItem::HandheldItem"
         },
         {
           "name": "Physics2",
@@ -7270,8 +7602,8 @@
         {
           "name": "Weapon",
           "type": "StixExtensions::Weapon",
-          "Property": "HandheldItem",
-          "Behavior": "HandheldItem"
+          "HandheldBehavior": "HandheldItem",
+          "AutoDeleteBehavior": "AutoDelete"
         }
       ],
       "animations": [
@@ -7561,31 +7893,6 @@
       "updateIfNotVisible": false,
       "variables": [
         {
-          "name": "CanFire",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "IsPickedUp",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "CanSwing",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "IsSwinging",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "IsFiring",
-          "type": "boolean",
-          "value": false
-        },
-        {
           "name": "IsBullet",
           "type": "boolean",
           "value": true
@@ -7602,7 +7909,18 @@
         }
       ],
       "effects": [],
-      "behaviors": [],
+      "behaviors": [
+        {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
+        {
+          "name": "Bullet",
+          "type": "StixExtensions::Bullet",
+          "AutoDeleteBehavior": "AutoDelete"
+        }
+      ],
       "animations": [
         {
           "name": "NewSprite",
@@ -7934,10 +8252,25 @@
           "name": "IsHidden",
           "type": "boolean",
           "value": false
+        },
+        {
+          "name": "Damage",
+          "type": "number",
+          "value": 10
         }
       ],
       "effects": [],
       "behaviors": [
+        {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
+        {
+          "name": "Falling",
+          "type": "StixExtensions::Falling",
+          "PhysicsBehavior": "Physics2"
+        },
         {
           "name": "HandheldItem",
           "type": "HandheldItem::HandheldItem"
@@ -7968,7 +8301,8 @@
         {
           "name": "Weapon",
           "type": "StixExtensions::Weapon",
-          "Behavior": "HandheldItem"
+          "HandheldBehavior": "HandheldItem",
+          "AutoDeleteBehavior": "AutoDelete"
         }
       ],
       "animations": [
@@ -7981,7 +8315,7 @@
               "timeBetweenFrames": 0.08,
               "sprites": [
                 {
-                  "hasCustomCollisionMask": false,
+                  "hasCustomCollisionMask": true,
                   "image": "axe.png",
                   "points": [],
                   "originPoint": {
@@ -7995,7 +8329,30 @@
                     "x": 4.947916507720947,
                     "y": 72.36111450195312
                   },
-                  "customCollisionMask": []
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 2.799999952316284,
+                        "y": 4.699999809265137
+                      },
+                      {
+                        "x": 18.399999618530273,
+                        "y": 0.8999999761581421
+                      },
+                      {
+                        "x": 24.200000762939453,
+                        "y": 11.100000381469727
+                      },
+                      {
+                        "x": 19,
+                        "y": 22.899999618530273
+                      },
+                      {
+                        "x": 3.200000047683716,
+                        "y": 17.299999237060547
+                      }
+                    ]
+                  ]
                 }
               ]
             }
@@ -8138,6 +8495,358 @@
       "effects": [],
       "behaviors": [],
       "animations": []
+    },
+    {
+      "additive": true,
+      "destroyWhenNoParticles": true,
+      "emitterAngleA": 0,
+      "emitterAngleB": 360,
+      "emitterForceMax": 90,
+      "emitterForceMin": 50,
+      "flow": 100,
+      "maxParticleNb": 300,
+      "name": "BasicExplosion",
+      "particleAlpha1": 204,
+      "particleAlpha2": 0,
+      "particleAlphaRandomness1": 0,
+      "particleAlphaRandomness2": 0,
+      "particleAngle1": 0,
+      "particleAngle2": 0,
+      "particleAngleRandomness1": 0,
+      "particleAngleRandomness2": 0,
+      "particleBlue1": 40,
+      "particleBlue2": 0,
+      "particleGravityX": 0,
+      "particleGravityY": 100,
+      "particleGreen1": 122,
+      "particleGreen2": 0,
+      "particleLifeTimeMax": 1.5,
+      "particleLifeTimeMin": 0.5,
+      "particleRed1": 255,
+      "particleRed2": 255,
+      "particleSize1": 100,
+      "particleSize2": 0,
+      "particleSizeRandomness1": 0,
+      "particleSizeRandomness2": 0,
+      "rendererParam1": 120,
+      "rendererParam2": 1,
+      "rendererType": "Quad",
+      "tags": "",
+      "tank": 30,
+      "textureParticleName": "assets/Glow.png",
+      "type": "ParticleSystem::ParticleEmitter",
+      "zoneRadius": 3,
+      "variables": [],
+      "effects": [],
+      "behaviors": []
+    },
+    {
+      "name": "Drone",
+      "tags": "",
+      "type": "Sprite",
+      "updateIfNotVisible": false,
+      "variables": [
+        {
+          "name": "IsHit",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "CenterOfRotationX",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "IsDead",
+          "type": "boolean",
+          "value": false
+        },
+        {
+          "name": "Angle",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "IsActive",
+          "type": "boolean",
+          "value": true
+        },
+        {
+          "name": "Health",
+          "type": "string",
+          "value": "100"
+        },
+        {
+          "name": "Distance",
+          "type": "number",
+          "value": 0
+        },
+        {
+          "name": "CenterOfRotationY",
+          "type": "number",
+          "value": 0
+        }
+      ],
+      "effects": [],
+      "behaviors": [
+        {
+          "name": "Physics2",
+          "type": "Physics2::Physics2Behavior",
+          "bodyType": "Dynamic",
+          "bullet": false,
+          "fixedRotation": false,
+          "canSleep": true,
+          "shape": "Box",
+          "shapeDimensionA": 0,
+          "shapeDimensionB": 0,
+          "shapeOffsetX": 0,
+          "shapeOffsetY": 0,
+          "polygonOrigin": "Center",
+          "vertices": [],
+          "density": 1,
+          "friction": 0.3,
+          "restitution": 0.1,
+          "linearDamping": 0.1,
+          "angularDamping": 0.1,
+          "gravityScale": 1,
+          "layers": 1,
+          "masks": 1
+        },
+        {
+          "name": "Vulnerable",
+          "type": "StixExtensions::Vulnerable"
+        }
+      ],
+      "animations": [
+        {
+          "name": "Drone",
+          "useMultipleDirections": false,
+          "directions": [
+            {
+              "looping": true,
+              "timeBetweenFrames": 0.07999999821186066,
+              "sprites": [
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drone0000.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 100,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 75,
+                        "y": 88.5
+                      },
+                      {
+                        "x": 25,
+                        "y": 88.5
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drone0001.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 100,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 75,
+                        "y": 88.5
+                      },
+                      {
+                        "x": 25,
+                        "y": 88.5
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drone0002.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 100,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 75,
+                        "y": 88.5
+                      },
+                      {
+                        "x": 25,
+                        "y": 88.5
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drone0003.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 100,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 75,
+                        "y": 88.5
+                      },
+                      {
+                        "x": 25,
+                        "y": 88.5
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drone0004.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 100,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 75,
+                        "y": 88.5
+                      },
+                      {
+                        "x": 25,
+                        "y": 88.5
+                      }
+                    ]
+                  ]
+                },
+                {
+                  "hasCustomCollisionMask": true,
+                  "image": "drone0005.png",
+                  "points": [],
+                  "originPoint": {
+                    "name": "origine",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "centerPoint": {
+                    "automatic": true,
+                    "name": "centre",
+                    "x": 0,
+                    "y": 0
+                  },
+                  "customCollisionMask": [
+                    [
+                      {
+                        "x": 0,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 100,
+                        "y": 14.5
+                      },
+                      {
+                        "x": 75,
+                        "y": 88.5
+                      },
+                      {
+                        "x": 25,
+                        "y": 88.5
+                      }
+                    ]
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "events": [
@@ -8208,6 +8917,14 @@
   ],
   "behaviorsSharedData": [
     {
+      "name": "AutoDelete",
+      "type": "StixExtensions::AutoDelete"
+    },
+    {
+      "name": "Bullet",
+      "type": "StixExtensions::Bullet"
+    },
+    {
       "name": "CanBeDamaged",
       "type": "StixExtensions::CanBeDamaged"
     },
@@ -8216,8 +8933,16 @@
       "type": "StixExtensions::Character"
     },
     {
+      "name": "Falling",
+      "type": "StixExtensions::Falling"
+    },
+    {
       "name": "HandheldItem",
       "type": "HandheldItem::HandheldItem"
+    },
+    {
+      "name": "Item",
+      "type": "StixExtensions::Item"
     },
     {
       "name": "Physics2",

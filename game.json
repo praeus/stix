@@ -2847,6 +2847,69 @@
           "identifier": "https://resources.gdevelop-app.com/assets/16x16 Pixel art RPG Items/Weapons/Sword.png",
           "name": "gdevelop-asset-store"
         }
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "drone0000.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drone0000.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "drone0001.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drone0001.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "drone0002.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drone0002.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "drone0003.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drone0003.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "drone0004.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drone0004.png",
+        "smoothed": true,
+        "userAdded": false
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "drone0005.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "drone0005.png",
+        "smoothed": true,
+        "userAdded": true
+      },
+      {
+        "alwaysLoaded": false,
+        "file": "assets/Glow.png",
+        "kind": "image",
+        "metadata": "",
+        "name": "assets/Glow.png",
+        "smoothed": true,
+        "userAdded": false
       }
     ],
     "resourceFolders": []
@@ -3084,11 +3147,6 @@
           "value": ""
         },
         {
-          "name": "IsChangingWeapons",
-          "type": "boolean",
-          "value": false
-        },
-        {
           "name": "IsAimingDiagonally",
           "type": "boolean",
           "value": false
@@ -3117,7 +3175,7 @@
       "effects": [
         {
           "effectType": "Glow",
-          "name": "Glow",
+          "name": "WhiteGlow",
           "doubleParameters": {
             "distance": 10,
             "innerStrength": 1,
@@ -3133,11 +3191,33 @@
         {
           "name": "CanBeDamaged",
           "type": "StixExtensions::CanBeDamaged",
-          "Property": "Character"
+          "CharacterBehavior": "Character",
+          "PlatformerBehavior": "PlatformerObject"
         },
         {
           "name": "Character",
-          "type": "StixExtensions::Character"
+          "type": "StixExtensions::Character",
+          "PlatformerBehavior": "PlatformerObject"
+        },
+        {
+          "jumpSpeed": 700,
+          "maxFallingSpeed": 4000,
+          "name": "PlatformerObject",
+          "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "acceleration": 1500,
+          "canGoDownFromJumpthru": false,
+          "canGrabPlatforms": false,
+          "canGrabWithoutMoving": false,
+          "deceleration": 1500,
+          "gravity": 1000,
+          "ignoreDefaultControls": false,
+          "jumpSustainTime": 0.7,
+          "ladderClimbingSpeed": 150,
+          "maxSpeed": 250,
+          "slopeMaxAngle": 60,
+          "useLegacyTrajectory": false,
+          "xGrabTolerance": 10,
+          "yGrabOffset": 0
         }
       ],
       "animations": [
@@ -6652,11 +6732,11 @@
       "effects": [
         {
           "effectType": "Glow",
-          "name": "Glow",
+          "name": "WhiteGlow",
           "doubleParameters": {
-            "distance": 15,
+            "distance": 10,
             "innerStrength": 1,
-            "outerStrength": 2
+            "outerStrength": 1
           },
           "stringParameters": {
             "color": "#ffffff"
@@ -6665,6 +6745,11 @@
         }
       ],
       "behaviors": [
+        {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
         {
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
@@ -6730,11 +6815,11 @@
       "effects": [
         {
           "effectType": "Glow",
-          "name": "Glow",
+          "name": "WhiteGlow",
           "doubleParameters": {
-            "distance": 15,
+            "distance": 10,
             "innerStrength": 1,
-            "outerStrength": 2
+            "outerStrength": 1
           },
           "stringParameters": {
             "color": "#ffffff"
@@ -6743,6 +6828,11 @@
         }
       ],
       "behaviors": [
+        {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
         {
           "name": "Physics2",
           "type": "Physics2::Physics2Behavior",
@@ -6798,62 +6888,6 @@
           ]
         }
       ]
-    },
-    {
-      "name": "SwingBox",
-      "tags": "",
-      "type": "Sprite",
-      "updateIfNotVisible": false,
-      "variables": [
-        {
-          "name": "IsSwinging",
-          "type": "boolean",
-          "value": false
-        },
-        {
-          "name": "Damage",
-          "type": "number",
-          "value": 10
-        },
-        {
-          "name": "IsColliding",
-          "type": "boolean",
-          "value": false
-        }
-      ],
-      "effects": [],
-      "behaviors": [],
-      "animations": [
-        {
-          "name": "",
-          "useMultipleDirections": false,
-          "directions": [
-            {
-              "looping": false,
-              "timeBetweenFrames": 0.08,
-              "sprites": [
-                {
-                  "hasCustomCollisionMask": false,
-                  "image": "NewSprite-1-16.png",
-                  "points": [],
-                  "originPoint": {
-                    "name": "origine",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "centerPoint": {
-                    "automatic": true,
-                    "name": "centre",
-                    "x": 0,
-                    "y": 0
-                  },
-                  "customCollisionMask": []
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "objectsGroups": [
@@ -6864,10 +6898,10 @@
           "name": "HighSpikes"
         },
         {
-          "name": "SawHitBox"
+          "name": "Spikes"
         },
         {
-          "name": "Spikes"
+          "name": "Saw"
         }
       ]
     },

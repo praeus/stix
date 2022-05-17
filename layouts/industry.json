@@ -280,6 +280,11 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
+        {
           "name": "HandheldItem",
           "type": "HandheldItem::HandheldItem",
           "OnlyFollowPosition": false
@@ -311,7 +316,9 @@
           "name": "Weapon",
           "type": "StixExtensions::Weapon",
           "Property": "HandheldItem",
-          "Behavior": "HandheldItem"
+          "Behavior": "HandheldItem",
+          "HandheldBehavior": "HandheldItem",
+          "AutoDeleteBehavior": "AutoDelete"
         }
       ],
       "animations": [
@@ -442,6 +449,11 @@
       "effects": [],
       "behaviors": [
         {
+          "name": "AutoDelete",
+          "type": "StixExtensions::AutoDelete",
+          "DeleteTime": 5
+        },
+        {
           "name": "HandheldItem",
           "type": "HandheldItem::HandheldItem",
           "OnlyFollowPosition": false
@@ -473,7 +485,9 @@
           "name": "Weapon",
           "type": "StixExtensions::Weapon",
           "Property": "HandheldItem",
-          "Behavior": "HandheldItem"
+          "Behavior": "HandheldItem",
+          "HandheldBehavior": "HandheldItem",
+          "AutoDeleteBehavior": "AutoDelete"
         }
       ],
       "animations": [
