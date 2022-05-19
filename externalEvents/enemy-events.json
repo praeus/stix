@@ -4,70 +4,13 @@
   "name": "Enemy Events",
   "events": [
     {
-      "type": "BuiltinCommonInstructions::Standard",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "CollisionNP"
-          },
-          "parameters": [
-            "AttackBox",
-            "StixCharacter",
-            "",
-            "",
-            ""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "SetObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "AttackBox",
-            "IsColliding",
-            "True"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "events": []
-    },
-    {
-      "type": "BuiltinCommonInstructions::ForEach",
-      "object": "AttackBox",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "ObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "AttackBox",
-            "IsColliding",
-            "True"
-          ],
-          "subInstructions": []
-        }
-      ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "SetObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "AttackBox",
-            "IsColliding",
-            "False"
-          ],
-          "subInstructions": []
-        }
-      ],
+      "colorB": 228,
+      "colorG": 176,
+      "colorR": 74,
+      "creationTime": 0,
+      "name": "Stix Enemy Events",
+      "source": "",
+      "type": "BuiltinCommonInstructions::Group",
       "events": [
         {
           "type": "BuiltinCommonInstructions::Standard",
@@ -75,16 +18,146 @@
             {
               "type": {
                 "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
+                "value": "CollisionNP"
               },
               "parameters": [
-                "",
-                "StixCharacter",
                 "AttackBox",
+                "StixCharacter",
+                "",
+                "",
                 ""
               ],
               "subInstructions": []
-            },
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "AttackBox",
+                "IsColliding",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": []
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "AttackBox",
+          "conditions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "ObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "AttackBox",
+                "IsColliding",
+                "True"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "actions": [
+            {
+              "type": {
+                "inverted": false,
+                "value": "SetObjectVariableAsBoolean"
+              },
+              "parameters": [
+                "AttackBox",
+                "IsColliding",
+                "False"
+              ],
+              "subInstructions": []
+            }
+          ],
+          "events": [
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "StixCharacter",
+                    "AttackBox",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "StixCharacter",
+                    "IsEnemyNPC",
+                    "True"
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ObjectVariableAsBoolean"
+                  },
+                  "parameters": [
+                    "StixCharacter",
+                    "IsDead",
+                    "False"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "LinkedObjects::PickObjectsLinkedTo"
+                  },
+                  "parameters": [
+                    "",
+                    "Weapons",
+                    "StixCharacter",
+                    ""
+                  ],
+                  "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "StixExtensions::Weapon::UseWeapon"
+                  },
+                  "parameters": [
+                    "Weapons",
+                    "Weapon",
+                    "StixCharacter",
+                    "Character",
+                    "Bullet",
+                    "Bullet",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
+            }
+          ]
+        },
+        {
+          "type": "BuiltinCommonInstructions::ForEach",
+          "object": "StixCharacter",
+          "conditions": [
             {
               "type": {
                 "inverted": false,
@@ -94,6 +167,19 @@
                 "StixCharacter",
                 "IsEnemyNPC",
                 "True"
+              ],
+              "subInstructions": []
+            },
+            {
+              "type": {
+                "inverted": false,
+                "value": "LinkedObjects::PickObjectsLinkedTo"
+              },
+              "parameters": [
+                "",
+                "EnemySpawnPoint",
+                "StixCharacter",
+                ""
               ],
               "subInstructions": []
             },
@@ -114,28 +200,14 @@
             {
               "type": {
                 "inverted": false,
-                "value": "LinkedObjects::PickObjectsLinkedTo"
+                "value": "StixExtensions::PlatformerPatrol"
               },
               "parameters": [
                 "",
-                "Weapons",
+                "EnemySpawnPoint",
                 "StixCharacter",
-                ""
-              ],
-              "subInstructions": []
-            },
-            {
-              "type": {
-                "inverted": false,
-                "value": "StixExtensions::Weapon::UseWeapon"
-              },
-              "parameters": [
-                "Weapons",
-                "Weapon",
-                "StixCharacter",
-                "Character",
-                "Bullet",
-                "Bullet",
+                "PlatformerObject",
+                "250",
                 ""
               ],
               "subInstructions": []
@@ -143,68 +215,8 @@
           ],
           "events": []
         }
-      ]
-    },
-    {
-      "type": "BuiltinCommonInstructions::ForEach",
-      "object": "StixCharacter",
-      "conditions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "ObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "StixCharacter",
-            "IsEnemyNPC",
-            "True"
-          ],
-          "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "LinkedObjects::PickObjectsLinkedTo"
-          },
-          "parameters": [
-            "",
-            "EnemySpawnPoint",
-            "StixCharacter",
-            ""
-          ],
-          "subInstructions": []
-        },
-        {
-          "type": {
-            "inverted": false,
-            "value": "ObjectVariableAsBoolean"
-          },
-          "parameters": [
-            "StixCharacter",
-            "IsDead",
-            "False"
-          ],
-          "subInstructions": []
-        }
       ],
-      "actions": [
-        {
-          "type": {
-            "inverted": false,
-            "value": "StixExtensions::PlatformerPatrol"
-          },
-          "parameters": [
-            "",
-            "EnemySpawnPoint",
-            "StixCharacter",
-            "PlatformerObject",
-            "250",
-            ""
-          ],
-          "subInstructions": []
-        }
-      ],
-      "events": []
+      "parameters": []
     },
     {
       "colorB": 228,
@@ -218,25 +230,22 @@
         {
           "type": "BuiltinCommonInstructions::ForEach",
           "object": "Drones",
-          "conditions": [],
-          "actions": [
+          "conditions": [
             {
               "type": {
                 "inverted": false,
-                "value": "StixExtensions::CheckNPCTimers"
+                "value": "LinkedObjects::PickObjectsLinkedTo"
               },
               "parameters": [
                 "",
-                "Drones",
-                "Vulnerable",
                 "DroneSpawnPoint",
-                "Blood",
-                "FlyingBeasts",
+                "Drones",
                 ""
               ],
               "subInstructions": []
             }
           ],
+          "actions": [],
           "events": [
             {
               "type": "BuiltinCommonInstructions::Standard",
@@ -380,7 +389,6 @@
                   ]
                 },
                 {
-                  "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
                     {
@@ -490,6 +498,310 @@
                   "events": []
                 },
                 {
+                  "disabled": true,
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "PickNearest"
+                      },
+                      "parameters": [
+                        "StixCharacter",
+                        "Drones.X()",
+                        "Drones.Y()",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Drones",
+                        "HasTarget",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Distance"
+                          },
+                          "parameters": [
+                            "StixCharacter",
+                            "Drones",
+                            "3000",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "SetObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "HasTarget",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "SetObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "IsActive",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [],
+                  "actions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "SetObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Drones",
+                        "HasTarget",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "events": []
+                },
+                {
+                  "type": "BuiltinCommonInstructions::ForEach",
+                  "object": "StixCharacter",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Drones",
+                        "HasTarget",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Distance"
+                          },
+                          "parameters": [
+                            "StixCharacter",
+                            "Drones",
+                            "1000",
+                            ""
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Distance"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "DroneSpawnPoint",
+                            "3000",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "SetObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "HasTarget",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "SetObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "IsActive",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        },
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "StixExtensions::EncircleCharacter"
+                          },
+                          "parameters": [
+                            "",
+                            "Drones",
+                            "StixCharacter",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                },
+                {
+                  "type": "BuiltinCommonInstructions::Standard",
+                  "conditions": [
+                    {
+                      "type": {
+                        "inverted": false,
+                        "value": "ObjectVariableAsBoolean"
+                      },
+                      "parameters": [
+                        "Drones",
+                        "HasTarget",
+                        ""
+                      ],
+                      "subInstructions": []
+                    }
+                  ],
+                  "actions": [],
+                  "events": [
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "BuiltinCommonInstructions::Once"
+                          },
+                          "parameters": [],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Arreter"
+                          },
+                          "parameters": [
+                            "Drones"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "Distance"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "DroneSpawnPoint",
+                            "100",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "SetObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "IsActive",
+                            "False"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    },
+                    {
+                      "type": "BuiltinCommonInstructions::Standard",
+                      "conditions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "ObjectVariableAsBoolean"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "IsActive",
+                            "True"
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "actions": [
+                        {
+                          "type": {
+                            "inverted": false,
+                            "value": "AddForceVers"
+                          },
+                          "parameters": [
+                            "Drones",
+                            "DroneSpawnPoint",
+                            "50",
+                            ""
+                          ],
+                          "subInstructions": []
+                        }
+                      ],
+                      "events": []
+                    }
+                  ]
+                },
+                {
+                  "disabled": true,
                   "folded": true,
                   "type": "BuiltinCommonInstructions::Standard",
                   "conditions": [
@@ -513,122 +825,13 @@
                       "colorG": 176,
                       "colorR": 74,
                       "creationTime": 0,
+                      "folded": true,
                       "name": "Circle Target",
                       "source": "",
                       "type": "BuiltinCommonInstructions::Group",
                       "events": [
                         {
-                          "type": "BuiltinCommonInstructions::Standard",
-                          "conditions": [],
-                          "actions": [
-                            {
-                              "type": {
-                                "inverted": false,
-                                "value": "SetObjectVariableAsBoolean"
-                              },
-                              "parameters": [
-                                "Drones",
-                                "HasTarget",
-                                ""
-                              ],
-                              "subInstructions": []
-                            }
-                          ],
-                          "events": []
-                        },
-                        {
-                          "type": "BuiltinCommonInstructions::ForEach",
-                          "object": "StixCharacter",
-                          "conditions": [
-                            {
-                              "type": {
-                                "inverted": false,
-                                "value": "ObjectVariableAsBoolean"
-                              },
-                              "parameters": [
-                                "Drones",
-                                "HasTarget",
-                                ""
-                              ],
-                              "subInstructions": []
-                            }
-                          ],
-                          "actions": [],
-                          "events": [
-                            {
-                              "type": "BuiltinCommonInstructions::Standard",
-                              "conditions": [
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "Distance"
-                                  },
-                                  "parameters": [
-                                    "StixCharacter",
-                                    "Drones",
-                                    "1000",
-                                    ""
-                                  ],
-                                  "subInstructions": []
-                                },
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "Distance"
-                                  },
-                                  "parameters": [
-                                    "Drones",
-                                    "DroneSpawnPoint",
-                                    "3000",
-                                    ""
-                                  ],
-                                  "subInstructions": []
-                                }
-                              ],
-                              "actions": [
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "SetObjectVariableAsBoolean"
-                                  },
-                                  "parameters": [
-                                    "Drones",
-                                    "HasTarget",
-                                    "True"
-                                  ],
-                                  "subInstructions": []
-                                },
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "StixExtensions::EncircleCharacter"
-                                  },
-                                  "parameters": [
-                                    "",
-                                    "Drones",
-                                    "StixCharacter",
-                                    ""
-                                  ],
-                                  "subInstructions": []
-                                },
-                                {
-                                  "type": {
-                                    "inverted": false,
-                                    "value": "SetObjectVariableAsBoolean"
-                                  },
-                                  "parameters": [
-                                    "Drones",
-                                    "IsActive",
-                                    "True"
-                                  ],
-                                  "subInstructions": []
-                                }
-                              ],
-                              "events": []
-                            }
-                          ]
-                        },
-                        {
+                          "disabled": true,
                           "type": "BuiltinCommonInstructions::Standard",
                           "conditions": [
                             {
@@ -743,6 +946,7 @@
                               ]
                             },
                             {
+                              "disabled": true,
                               "type": "BuiltinCommonInstructions::Standard",
                               "conditions": [
                                 {
@@ -837,44 +1041,44 @@
                   ]
                 }
               ]
+            },
+            {
+              "type": "BuiltinCommonInstructions::Standard",
+              "conditions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "VarObjet"
+                  },
+                  "parameters": [
+                    "Drones",
+                    "Health",
+                    "<=",
+                    "0"
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "actions": [
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "StixExtensions::Vulnerable::Respawn"
+                  },
+                  "parameters": [
+                    "Drones",
+                    "Vulnerable",
+                    "Physics2",
+                    "DroneSpawnPoint",
+                    "BasicExplosion",
+                    ""
+                  ],
+                  "subInstructions": []
+                }
+              ],
+              "events": []
             }
           ]
-        },
-        {
-          "type": "BuiltinCommonInstructions::Standard",
-          "conditions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "VarObjet"
-              },
-              "parameters": [
-                "Drones",
-                "Health",
-                "<=",
-                "0"
-              ],
-              "subInstructions": []
-            }
-          ],
-          "actions": [
-            {
-              "type": {
-                "inverted": false,
-                "value": "StixExtensions::Vulnerable::Respawn"
-              },
-              "parameters": [
-                "Drones",
-                "Vulnerable",
-                "Physics2",
-                "DroneSpawnPoint",
-                "BasicExplosion",
-                ""
-              ],
-              "subInstructions": []
-            }
-          ],
-          "events": []
         },
         {
           "type": "BuiltinCommonInstructions::Standard",

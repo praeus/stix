@@ -3200,10 +3200,10 @@
           "PlatformerBehavior": "PlatformerObject"
         },
         {
-          "jumpSpeed": 700,
-          "maxFallingSpeed": 4000,
           "name": "PlatformerObject",
           "type": "PlatformBehavior::PlatformerObjectBehavior",
+          "jumpSpeed": 700,
+          "maxFallingSpeed": 4000,
           "acceleration": 1500,
           "canGoDownFromJumpthru": false,
           "canGrabPlatforms": false,

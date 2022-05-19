@@ -8585,6 +8585,11 @@
           "name": "CenterOfRotationY",
           "type": "number",
           "value": 0
+        },
+        {
+          "name": "HasTarget",
+          "type": "boolean",
+          "value": false
         }
       ],
       "effects": [],

@@ -1573,6 +1573,16 @@
                     "StixCharacter.CenterX()"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "Arreter"
+                  },
+                  "parameters": [
+                    "FlyingBeasts"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
@@ -2966,6 +2976,18 @@
                     "SpawnPoint.CenterY()"
                   ],
                   "subInstructions": []
+                },
+                {
+                  "type": {
+                    "inverted": false,
+                    "value": "ActivateBehavior"
+                  },
+                  "parameters": [
+                    "Object",
+                    "PhysicsBehavior",
+                    "no"
+                  ],
+                  "subInstructions": []
                 }
               ],
               "events": []
@@ -3032,18 +3054,6 @@
                   "parameters": [
                     "Object",
                     "\"RespawnTimer\""
-                  ],
-                  "subInstructions": []
-                },
-                {
-                  "type": {
-                    "inverted": false,
-                    "value": "ActivateBehavior"
-                  },
-                  "parameters": [
-                    "Object",
-                    "PhysicsBehavior",
-                    "no"
                   ],
                   "subInstructions": []
                 }
@@ -8175,7 +8185,7 @@
                       "parameters": [
                         "SwingBox",
                         "=",
-                        "Object.CenterX() + 28",
+                        "Object.CenterX() + 33",
                         "=",
                         "Object.Y() - 20"
                       ],
