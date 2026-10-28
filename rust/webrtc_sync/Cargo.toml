@@ -1,0 +1,15 @@
+[package]
+name = "webrtc_sync"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+godot = "0.5.5"
+webrtc = "0.21.1"
+tokio = { version = "1", features = ["rt-multi-thread", "sync", "macros", "time"] }
+async-trait = "0.1"
+bytes = "1"

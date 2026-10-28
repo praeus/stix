@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://levels/page_level.gd" id="script"]
+[ext_resource type="Script" path="res://levels/notebook_page.gd" id="page"]
+[ext_resource type="PackedScene" path="res://characters/stix/stix_figure.tscn" id="stix"]
+
+[node name="PageLevel" type="Node2D"]
+script = ExtResource("script")
+
+[node name="Page" type="Node2D" parent="."]
+script = ExtResource("page")
+
+[node name="Platforms" type="Node2D" parent="."]
+
+[node name="StixFigure" parent="." instance=ExtResource("stix")]
+position = Vector2(85, 1440)
+
+[node name="Camera2D" type="Camera2D" parent="StixFigure"]
+position = Vector2(0, -100)
+position_smoothing_enabled = true
+position_smoothing_speed = 6.0

@@ -1,0 +1,204 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Texture2D" path="res://art/stix/paper.svg" id="1"]
+[ext_resource type="Texture2D" path="res://art/stix/head.svg" id="2"]
+[ext_resource type="Texture2D" path="res://art/stix/torso.svg" id="3"]
+[ext_resource type="Texture2D" path="res://art/stix/upper_arm.svg" id="4"]
+[ext_resource type="Texture2D" path="res://art/stix/lower_arm.svg" id="5"]
+[ext_resource type="Texture2D" path="res://art/stix/upper_leg.svg" id="6"]
+[ext_resource type="Texture2D" path="res://art/stix/lower_leg.svg" id="7"]
+[ext_resource type="Texture2D" path="res://art/stix/hand.svg" id="8"]
+[ext_resource type="Texture2D" path="res://art/stix/foot.svg" id="9"]
+
+[node name="StixPartsPreview" type="Node2D"]
+
+[node name="Paper" type="Sprite2D" parent="."]
+texture = ExtResource("1")
+centered = false
+
+[node name="Parts" type="Node2D" parent="."]
+position = Vector2(0, 0)
+
+[node name="Head" type="Sprite2D" parent="Parts"]
+position = Vector2(180, 352)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-30, -51)
+
+[node name="Torso" type="Sprite2D" parent="Parts"]
+position = Vector2(252.5, 352)
+texture = ExtResource("3")
+centered = false
+offset = Vector2(-14.5, -82)
+
+[node name="UpperArm" type="Sprite2D" parent="Parts"]
+position = Vector2(309, 288)
+texture = ExtResource("4")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="LowerArm" type="Sprite2D" parent="Parts"]
+position = Vector2(364.5, 288)
+texture = ExtResource("5")
+centered = false
+offset = Vector2(-13.5, -8)
+
+[node name="UpperLeg" type="Sprite2D" parent="Parts"]
+position = Vector2(420, 288)
+texture = ExtResource("6")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="LowerLeg" type="Sprite2D" parent="Parts"]
+position = Vector2(476, 288)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Hand" type="Sprite2D" parent="Parts"]
+position = Vector2(533.5, 288)
+texture = ExtResource("8")
+centered = false
+offset = Vector2(-15.5, -10)
+
+[node name="Foot" type="Sprite2D" parent="Parts"]
+position = Vector2(590, 288)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-13, -13)
+
+[node name="Figure" type="Node2D" parent="."]
+position = Vector2(820, 432)
+
+[node name="Torso" type="Sprite2D" parent="Figure"]
+position = Vector2(0, 0)
+texture = ExtResource("3")
+centered = false
+offset = Vector2(-14.5, -82)
+
+[node name="Neck" type="Node2D" parent="Figure"]
+position = Vector2(0, -74)
+
+[node name="Head" type="Sprite2D" parent="Figure/Neck"]
+position = Vector2(0, 0)
+texture = ExtResource("2")
+centered = false
+offset = Vector2(-30, -51)
+
+[node name="ShoulderL" type="Node2D" parent="Figure"]
+position = Vector2(0, -71)
+rotation = 0.35
+
+[node name="UpperArm" type="Sprite2D" parent="Figure/ShoulderL"]
+position = Vector2(0, 0)
+texture = ExtResource("4")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Elbow" type="Node2D" parent="Figure/ShoulderL"]
+position = Vector2(0, 38)
+rotation = -0.2
+
+[node name="LowerArm" type="Sprite2D" parent="Figure/ShoulderL/Elbow"]
+position = Vector2(0, 0)
+texture = ExtResource("5")
+centered = false
+offset = Vector2(-13.5, -8)
+
+[node name="Wrist" type="Node2D" parent="Figure/ShoulderL/Elbow"]
+position = Vector2(0, 36)
+
+[node name="Hand" type="Sprite2D" parent="Figure/ShoulderL/Elbow/Wrist"]
+position = Vector2(0, 0)
+texture = ExtResource("8")
+centered = false
+offset = Vector2(-15.5, -10)
+
+[node name="HipL" type="Node2D" parent="Figure"]
+position = Vector2(0, 0)
+rotation = 0.18
+
+[node name="UpperLeg" type="Sprite2D" parent="Figure/HipL"]
+position = Vector2(0, 0)
+texture = ExtResource("6")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Knee" type="Node2D" parent="Figure/HipL"]
+position = Vector2(0, 46)
+rotation = -0.05
+
+[node name="LowerLeg" type="Sprite2D" parent="Figure/HipL/Knee"]
+position = Vector2(0, 0)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Ankle" type="Node2D" parent="Figure/HipL/Knee"]
+position = Vector2(0, 46)
+rotation = -0.13
+
+[node name="Foot" type="Sprite2D" parent="Figure/HipL/Knee/Ankle"]
+position = Vector2(0, 0)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-13, -13)
+
+[node name="ShoulderR" type="Node2D" parent="Figure"]
+position = Vector2(0, -71)
+rotation = -0.35
+
+[node name="UpperArm" type="Sprite2D" parent="Figure/ShoulderR"]
+position = Vector2(0, 0)
+texture = ExtResource("4")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Elbow" type="Node2D" parent="Figure/ShoulderR"]
+position = Vector2(0, 38)
+rotation = 0.2
+
+[node name="LowerArm" type="Sprite2D" parent="Figure/ShoulderR/Elbow"]
+position = Vector2(0, 0)
+texture = ExtResource("5")
+centered = false
+offset = Vector2(-13.5, -8)
+
+[node name="Wrist" type="Node2D" parent="Figure/ShoulderR/Elbow"]
+position = Vector2(0, 36)
+
+[node name="Hand" type="Sprite2D" parent="Figure/ShoulderR/Elbow/Wrist"]
+position = Vector2(0, 0)
+texture = ExtResource("8")
+centered = false
+offset = Vector2(-15.5, -10)
+
+[node name="HipR" type="Node2D" parent="Figure"]
+position = Vector2(0, 0)
+rotation = -0.18
+
+[node name="UpperLeg" type="Sprite2D" parent="Figure/HipR"]
+position = Vector2(0, 0)
+texture = ExtResource("6")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Knee" type="Node2D" parent="Figure/HipR"]
+position = Vector2(0, 46)
+rotation = 0.05
+
+[node name="LowerLeg" type="Sprite2D" parent="Figure/HipR/Knee"]
+position = Vector2(0, 0)
+texture = ExtResource("7")
+centered = false
+offset = Vector2(-14, -8)
+
+[node name="Ankle" type="Node2D" parent="Figure/HipR/Knee"]
+position = Vector2(0, 46)
+rotation = 0.13
+
+[node name="Foot" type="Sprite2D" parent="Figure/HipR/Knee/Ankle"]
+position = Vector2(0, 0)
+texture = ExtResource("9")
+centered = false
+offset = Vector2(-13, -13)

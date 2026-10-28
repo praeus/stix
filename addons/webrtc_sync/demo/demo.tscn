@@ -1,0 +1,49 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://addons/webrtc_sync/demo/demo.gd" id="1_demo"]
+[ext_resource type="Script" path="res://addons/webrtc_sync/lobby.gd" id="2_lobby"]
+[ext_resource type="Script" path="res://addons/webrtc_sync/signaling_server.gd" id="3_server"]
+
+[node name="Demo" type="Node2D"]
+script = ExtResource("1_demo")
+
+[node name="RtcSession" type="RtcSession" parent="."]
+
+[node name="RtcLobby" type="Node" parent="." node_paths=PackedStringArray("session")]
+script = ExtResource("2_lobby")
+session = NodePath("../RtcSession")
+
+[node name="RtcSignalingServer" type="Node" parent="."]
+script = ExtResource("3_server")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="Panel" type="HBoxContainer" parent="UI"]
+offset_left = 8.0
+offset_top = 8.0
+offset_right = 520.0
+offset_bottom = 40.0
+
+[node name="Host" type="Button" parent="UI/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Host"
+
+[node name="Address" type="LineEdit" parent="UI/Panel"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(220, 0)
+layout_mode = 2
+text = "ws://127.0.0.1:9080"
+
+[node name="Join" type="Button" parent="UI/Panel"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Join"
+
+[node name="Status" type="Label" parent="UI"]
+unique_name_in_owner = true
+offset_left = 8.0
+offset_top = 48.0
+offset_right = 600.0
+offset_bottom = 72.0
+text = "Host or join. Arrows: move, C: color, P: ping"
